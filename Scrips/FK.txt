@@ -19,8 +19,6 @@ ALTER TABLE canton
 ALTER TABLE district
     ADD CONSTRAINT fk_district_canton FOREIGN KEY (id_canton) REFERENCES canton(id_canton);
     
-ALTER TABLE community
-    ADD CONSTRAINT fk_community_district FOREIGN KEY (id_district) REFERENCES district(id_district);
 
 ALTER TABLE product_photo
     ADD CONSTRAINT fk_pphoto_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch);
@@ -29,9 +27,10 @@ ALTER TABLE purchase_history
     ADD CONSTRAINT fk_phistory_user FOREIGN KEY (username) REFERENCES user_t(username);
       
 ALTER TABLE message
-    ADD (CONSTRAINT fk_message_conversa FOREIGN KEY (id_person) REFERENCES person(id_person),
-         CONSTRAINT fk_message_username FOREIGN KEY (username) REFERENCES user_t(username)
-);
+    ADD CONSTRAINT fk_message_username FOREIGN KEY (username) REFERENCES user_t(username);
+
+ALTER TABLE message
+    ADD  CONSTRAINT fk_message_conver FOREIGN KEY (id_conversation) REFERENCES conversation(id_conversation);
 
 ALTER TABLE phone_number
     ADD CONSTRAINT fk_pnumber_person FOREIGN KEY (id_person) REFERENCES person(id_person);

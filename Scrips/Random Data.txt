@@ -21,10 +21,7 @@ INSERT INTO person(id_person, first_name , middle_name , first_surname, second_s
 VALUES ('117310571', 'Rebeca', 'María', 'Madrigal','Arguedas', DATE'1999-01-07', 'Del antigua Ñangazo 75mts al Norte, la casa 9B' , 'rmma070199@gmail.com' , 1, 107, USER, SYSDATE);
 
 INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('117310571', 'Rebeca', 'María', 'Madrigal','Arguedas', DATE'1999-01-07', 'Del antigua Ñangazo 75mts al Norte, la casa 9B' , 'rmma070199@gmail.com' , 1, 107, USER, SYSDATE);
-
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('117310571', 'María', NULL, 'Melano','Cierra', DATE'1980-11-30', 'Del árbol de poro 400mts al Este, casa con cochera gris' , 'melano19@gmail.com' , 1,285, USER, SYSDATE);
+VALUES ('117378971', 'María', NULL, 'Melano','Cierra', DATE'1980-11-30', 'Del árbol de poro 400mts al Este, casa con cochera gris' , 'melano19@gmail.com' , 1,285, USER, SYSDATE);
 
 INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
 VALUES ('113730331', 'Unberto', 'Berto', 'Barbosa','Bermudes', DATE'1954-06-06', 'Del las Bodegas 200mts al Noreste y 50mst al Sur, casa marrón' , 'bbbb664@gmail.com' , 1, 216, USER, SYSDATE);
@@ -36,7 +33,7 @@ INSERT INTO person(id_person, first_name , middle_name , first_surname, second_s
 VALUES ('313731105', 'Enzo', 'Lucrecio', 'Suárez','Zeledón', DATE'1961-12-22', 'A la vuela de la ferreteria El Pepe, casa con portón negro' , 'lucre22@gmail.com' , 1, 316, USER, SYSDATE);
 
 INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('113730331', 'Josep', 'Thiago', 'Jurado','Juez', DATE'1989-12-31', 'La casa de la izquierda de la veterinaria de Tures' , 'juez31@gmail.com' , 1, 306, USER, SYSDATE);
+VALUES ('113734571', 'Josep', 'Thiago', 'Jurado','Juez', DATE'1989-12-31', 'La casa de la izquierda de la veterinaria de Tures' , 'juez31@gmail.com' , 1, 306, USER, SYSDATE);
 
 INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
 VALUES ('113236231', 'Laura', 'Lucrecia', 'Pedrero','Pedrasco', DATE'1996-07-07', 'Del chino de la última parada de San Rafael, 200,mts al Norte, casa con portón blanco' , 'llpiedra@gmail.com' , 1, 314, USER, SYSDATE);
@@ -66,3 +63,16 @@ VALUES (S_ID_TYPE.nextval, 'Mexicano', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
 VALUES (S_ID_TYPE.nextval, 'Venezolano', USER, SYSDATE);
+
+
+-------------------------------------------------------------------------
+--PAR
+-------------------------------------------------------------------------
+INSERT INTO parameters_t(name, values_p)
+VALUES ('Top 3', '3');
+
+INSERT INTO parameters_t(name, values_p)
+VALUES ('Top 5', '5');
+
+INSERT INTO parameters_t(name, values_p)
+VALUES ('Top 10', '10');

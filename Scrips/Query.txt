@@ -1,0 +1,51 @@
+--Administrators
+----------------------------------------------------------------------
+--A.Top_sellers
+----------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION top_sellers(pvalues_p Number) RETURN VARCHAR2 IS 
+vcName VARCHAR2(30);
+BEGIN
+    SELECT  count(pu.id_purchase),  u.username 
+    INTO vcName
+    FROM purchase pu
+    INNER JOIN shopping_car sc
+    ON pu.id_purchase = sc.id_purchase
+    INNER JOIN watchxshopping_car wxs
+    ON sc.id_shopping_car = wXs.id_shopping_car
+    INNER JOIN userxwatch uxw
+    ON wxs.id_watch = uxw.id_watch
+    INNER JOIN user_t u
+    ON uxw.username = u.username 
+    Where ROWNUM = pvalues_p
+    GROUP BY u.username
+    ORDER BY count(pu.id_purchase) DESC;
+    RETURN vcname;
+END  ;
+
+----------------------------------------------------------------------
+--b.Top_buyers
+----------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION top_buyers(pvalues_p Number) RETURN VARCHAR2 IS
+vcName VARCHAR2(30);
+BEGIN
+	SELECT u.username, count(pu.id_purchase) 
+    INTO vcName
+    FROM user_t u
+    INNER JOIN shopping_car sc
+    ON u.username = sc.username
+    INNER JOIN purchase pu
+    ON sc.id_purchase = pu.id_purchase
+    GROUP BY u.username
+    ORDER BY count(pu.id_purchase) DESC;
+    RETURN vcname;
+END;
+
+----------------------------------------------------------------------
+--b.Top_buyers
+----------------------------------------------------------------------
+
+
+
+
+

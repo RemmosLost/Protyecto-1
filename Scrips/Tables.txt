@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------
 
 CREATE TABLE person(
-    id_person           NUMBER(30),
+    id_person           VARCHAR2(30),
     first_name          VARCHAR2(20) CONSTRAINT person_firstname_nn NOT NULL,
     middle_name         VARCHAR2(25),
     first_surname       VARCHAR2(25) CONSTRAINT person_lastname_nn NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE person(
     --FK
     id_type             NUMBER(4) CONSTRAINT person_type_nn NOT NULL,
     id_district         NUMBER(5) CONSTRAINT person_iddistrict_nn NOT NULL,
-    id_photo            BLOB,
+    id_photo            NUMBER(5) ,
     --AUDIT FIELDS
     creation_date       DATE CONSTRAINT person_creationdate_nn NOT NULL,
     creation_user       VARCHAR2(25) CONSTRAINT person_creationuser_nn NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE user_t(
     username                VARCHAR2(50),
     user_password           VARCHAR2(40) CONSTRAINT usernam_userpass_nn NOT NULL,
     --FK
-    id_person               NUMBER(30) CONSTRAINT usernam_idperso_nn NOT NULL,
+    id_person               VARCHAR2(30) CONSTRAINT usernam_idperso_nn NOT NULL,
     id_type_user	        NUMBER(10) CONSTRAINT usernam_idtypeu_nn NOT NULL,
     id_purchase		        NUMBER(10) CONSTRAINT usernam_idpurch_nn NOT NULL,
     --AUDIT FIELDS
@@ -135,7 +135,7 @@ CREATE TABLE purchase_history(
     id_purchase_history     NUMBER(30),
     purchase_history_date   Date CONSTRAINT phise_date_nn NOT NULL,
     --FK
-    id_person	 	        NUMBER(30) CONSTRAINT phis_idperson_nn NOT NULL,
+    username	            VARCHAR2(30) CONSTRAINT phis_username_nn NOT NULL,
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT phis_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT phis_creationuser_nn NOT NULL,
@@ -159,7 +159,7 @@ CREATE TABLE message(
     text                    VARCHAR2(400) CONSTRAINT message_text_nn NOT NULL,
     --FK
     id_conversation         NUMBER(10) CONSTRAINT message_idconver_nn NOT NULL,
-    username                NUMBER(10) CONSTRAINT message_username_nn NOT NULL,
+    username                VARCHAR2(30) CONSTRAINT message_username_nn NOT NULL,
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT message_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT message_creationuser_nn NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE phone_number(
     id_phone_number    	    NUMBER(10),
     phone_number            NUMBER(10) CONSTRAINT phone_number_nn NOT NULL,
     --FK
-    id_person               NUMBER(10) CONSTRAINT phone_idperson_nn NOT NULL,
+    id_person               VARCHAR2(30) CONSTRAINT phone_idperson_nn NOT NULL,
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT phone_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT phone_creationuser_nn NOT NULL,
@@ -223,7 +223,7 @@ CREATE TABLE wish_list(
     wish_list_date          DATE CONSTRAINT wish_date_nn NOT NULL,
     note                    VARCHAR2(25) CONSTRAINT wish_note_nn NOT NULL,
     --FK
-    username                NUMBER(10) CONSTRAINT wish_username_nn NOT NULL,
+    username                VARCHAR2(25) CONSTRAINT wish_username_nn NOT NULL,
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT wish_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT wish_creationuser_nn NOT NULL,
@@ -237,7 +237,7 @@ CREATE TABLE shopping_car(
     shopping_car_date       DATE CONSTRAINT shoppcar_date_nn NOT NULL,
     --FK
     id_purchase             NUMBER(10) CONSTRAINT shoppcar_idpurcha_nn NOT NULL,
-    username                NUMBER(10) CONSTRAINT shoppcar_username_nn NOT NULL,
+    username                VARCHAR2(25) CONSTRAINT shoppcar_username_nn NOT NULL,
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT shoppcar_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT shoppcar_creationuser_nn NOT NULL,
@@ -400,7 +400,7 @@ CREATE TABLE watchxtype_shipping(
 
 CREATE TABLE userxwatch(
     id_watch                    NUMBER(15),
-    username                    NUMBER(15),
+    username                    VARCHAR2(25),
     --FK 
     --AUDIT FIELDS
     creation_date               DATE CONSTRAINT uxw_creationdate_nn NOT NULL,
@@ -417,7 +417,7 @@ CREATE TABLE watchxshopping_car(
 );
 
 CREATE TABLE userxcalification(
-    username                    NUMBER(15),
+    username                    VARCHAR2(25),
     id_calification             NUMBER(15),
     --FK 
     --AUDIT FIELDS
@@ -441,7 +441,6 @@ CREATE TABLE personxnationality(
 --Schema par
 --Table that stores parameter data
 ---------------------------------------------------------------------------------------
-CREATE TABLE parameters(
-    name       VARCHAR2(100),
-    values_p     NUMBER(2)
-);
+CREATE TABLE parameters_t(
+    name         VARCHAR2(100),
+    values_p     NUMBER(2)); 

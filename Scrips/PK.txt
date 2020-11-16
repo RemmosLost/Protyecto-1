@@ -241,14 +241,18 @@ ALTER TABLE previous_price
     STORAGE (INITIAL 10K
             NEXT 10K
             PCTINCREASE 0);
-                     
-ALTER TABLE parameters
+------------------------------------------------------------------------------------------------------
+--SCHEMA PAR
+------------------------------------------------------------------------------------------------------                     
+ALTER TABLE parameters_t
     ADD CONSTRAINT pk_parameters PRIMARY KEY (name)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20
     STORAGE (INITIAL 10K
             NEXT 10K
-            PCTINCREASE 0);            
+            PCTINCREASE 0);      
+
+GRANT INSERT, DELETE, UPDATE, SELECT ON par.parameters_t TO usu;      
 ------------------------------------------------------------------------------------------------------
 --Relations NXN
 ------------------------------------------------------------------------------------------------------
