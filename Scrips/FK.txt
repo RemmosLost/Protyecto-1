@@ -27,10 +27,7 @@ ALTER TABLE product_photo
     
 ALTER TABLE purchase_history
     ADD CONSTRAINT fk_phistory_user FOREIGN KEY (username) REFERENCES user_t(username);
-    
-ALTER TABLE nationality
-    ADD CONSTRAINT fk_nationa_person FOREIGN KEY (id_person) REFERENCES person(id_person);
-    
+      
 ALTER TABLE message
     ADD (CONSTRAINT fk_message_conversa FOREIGN KEY (id_person) REFERENCES person(id_person),
          CONSTRAINT fk_message_username FOREIGN KEY (username) REFERENCES user_t(username)
@@ -97,4 +94,9 @@ ALTER TABLE watchxshopping_car
 ALTER TABLE userxcalification
     ADD (CONSTRAINT fk_uXc_califi FOREIGN KEY (id_calification) REFERENCES calification(id_calification),
         CONSTRAINT fk_uXc_username FOREIGN KEY (username) REFERENCES user_t(username)
+);
+
+ALTER TABLE personxnationality
+    ADD (CONSTRAINT fk_pxn_person FOREIGN KEY (id_person) REFERENCES person(id_person),
+        CONSTRAINT fk_pxn_nationa FOREIGN KEY (id_nationality) REFERENCES nationality(id_nationality)
 );

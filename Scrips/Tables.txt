@@ -147,7 +147,6 @@ CREATE TABLE nationality(
     id_nationality     	    NUMBER(30),
     name                    Date CONSTRAINT natio_name_nn NOT NULL,
     --FK
-    id_person               NUMBER(30) CONSTRAINT natio_idperson_nn NOT NULL,
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT natio_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT natio_creationuser_nn NOT NULL,
@@ -415,6 +414,16 @@ CREATE TABLE userxcalification(
     creation_date               DATE CONSTRAINT uxc_creationdate_nn NOT NULL,
     creation_user               VARCHAR2(25) CONSTRAINT uxs_creationuser_nn NOT NULL
 );
+
+CREATE TABLE personxnationality(
+    id_person                   VARCHAR2(30),
+    id_nationality              NUMBER(15),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT pxn_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT pxn_creationuser_nn NOT NULL
+);
+
 
 ----------------------------------------------------------------------------------------
 --Schema par

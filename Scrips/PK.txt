@@ -288,3 +288,11 @@ ALTER TABLE userxcalification
     STORAGE (INITIAL 10K
             NEXT 10K
             PCTINCREASE 0);
+
+ALTER TABLE personxnationality
+    ADD CONSTRAINT pk_personxnatio PRIMARY KEY (id_person, id_nationality)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
