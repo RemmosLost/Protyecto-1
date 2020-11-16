@@ -30,8 +30,8 @@ ALTER TABLE id_type
             NEXT 10K
             PCTINCREASE 0);
 
-ALTER TABLE phone_nummber
-    ADD CONSTRAINT pk_phone_nummber PRIMARY KEY (id_phone_nummber)
+ALTER TABLE phone_number
+    ADD CONSTRAINT pk_phone_number PRIMARY KEY (id_phone_number)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20
     STORAGE (INITIAL 10K
@@ -127,13 +127,16 @@ ALTER TABLE purchase
             NEXT 10K
             PCTINCREASE 0);
 
-ALTER TABLE payment_method
-    ADD CONSTRAINT pk_payment_method PRIMARY KEY (payment_method )
-    USING INDEX TABLESPACE usu_index
-    PCTFREE 20
-    STORAGE (INITIAL 10K
-            NEXT 10K
-            PCTINCREASE 0);
+CREATE TABLE payment_method(
+    id_payment_method       NUMBER(30),
+    description             VARCHAR2(25) CONSTRAINT pmethod_date_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT pmethod_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT pmethod_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
                         
 ALTER TABLE calification
     ADD CONSTRAINT pk_calification PRIMARY KEY (id_calification)
@@ -208,7 +211,7 @@ ALTER TABLE model
             PCTINCREASE 0);
 
 ALTER TABLE product_photo
-    ADD CONSTRAINT pk_product_photo PRIMARY KEY (id_product_photo)
+    ADD CONSTRAINT pk_product_photo PRIMARY KEY (id_watch_photo)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20
     STORAGE (INITIAL 10K
@@ -224,7 +227,7 @@ ALTER TABLE category
             PCTINCREASE 0);
 
 ALTER TABLE binnacle_price
-    ADD CONSTRAINT pk_binnacle_price PRIMARY KEY (id_binnacle_price)
+    ADD CONSTRAINT pk_binnacle_price PRIMARY KEY (id_binnacle)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20
     STORAGE (INITIAL 10K
@@ -232,7 +235,7 @@ ALTER TABLE binnacle_price
             PCTINCREASE 0);
 
 ALTER TABLE previous_price
-    ADD CONSTRAINT pk_previous_price PRIMARY KEY (id_previous_price)
+    ADD CONSTRAINT pk_previous_price PRIMARY KEY (id_previous)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20
     STORAGE (INITIAL 10K
@@ -240,7 +243,7 @@ ALTER TABLE previous_price
             PCTINCREASE 0);
                      
 ALTER TABLE parameters
-    ADD CONSTRAINT pk_parameters PRIMARY KEY (id_name)
+    ADD CONSTRAINT pk_parameters PRIMARY KEY (name)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20
     STORAGE (INITIAL 10K
@@ -257,7 +260,7 @@ ALTER TABLE watchxwish_list
             NEXT 10K
             PCTINCREASE 0);
 
-ALTER TABLE watchxtype_shippng
+ALTER TABLE watchxtype_shipping
     ADD CONSTRAINT pk_place_watcxtypesh PRIMARY KEY (id_watch, id_shipping)
     USING INDEX TABLESPACE usu_index
     PCTFREE 20

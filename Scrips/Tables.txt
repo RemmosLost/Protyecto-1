@@ -145,7 +145,7 @@ CREATE TABLE purchase_history(
 
 CREATE TABLE nationality(
     id_nationality     	    NUMBER(30),
-    name                    Date CONSTRAINT natio_name_nn NOT NULL,
+    name                    VARCHAR2(25) CONSTRAINT natio_name_nn NOT NULL,
     --FK
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT natio_creationdate_nn NOT NULL,
@@ -422,6 +422,17 @@ CREATE TABLE personxnationality(
     --AUDIT FIELDS
     creation_date               DATE CONSTRAINT pxn_creationdate_nn NOT NULL,
     creation_user               VARCHAR2(25) CONSTRAINT pxn_creationuser_nn NOT NULL
+);
+
+CREATE TABLE payment_method(
+    id_payment_method       NUMBER(30),
+    description             VARCHAR2(25) CONSTRAINT pmethod_date_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT pmethod_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT pmethod_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
 );
 
 

@@ -1,16 +1,17 @@
 ----------------------------------------------------------------------------------------------
---TRIGGERS
+--TRIGGERS:Run one by one
 ----------------------------------------------------------------------------------------------
 --TABLE PERSON
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertPerson
+CREATE OR REPLACE TRIGGER usu.beforeInsertPerson
 BEFORE INSERT
 ON usu.person
 FOR EACH ROW
 BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
-END;
+END beforeInsertPerson;
+
 
 CREATE OR REPLACE TRIGGER usu.beforeUpdatePerson
 BEFORE UPDATE
@@ -19,7 +20,7 @@ FOR EACH ROW
 BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
-END;
+END beforeUpdatePerson;
 ----------------------------------------------------------------------------------------------
 --TABLE photo
 ----------------------------------------------------------------------------------------------
@@ -30,100 +31,100 @@ FOR EACH ROW
 BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
-END;
+END beforeInsertphoto;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatephoto
+CREATE OR REPLACE TRIGGER usu.beforeUpdatephoto
 BEFORE UPDATE
 ON usu.photo
 FOR EACH ROW
 BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
-END;
+END beforeUpdatephoto;
 ----------------------------------------------------------------------------------------------
 --TABLE user_t
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertuser
+CREATE OR REPLACE TRIGGER usu.beforeInsertuser
 BEFORE INSERT
 ON usu.user_t
 FOR EACH ROW
 BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
-END;
+END beforeInsertuser;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateUser
+CREATE OR REPLACE TRIGGER usu.beforeUpdateUser
 BEFORE UPDATE
-ON us.user_t
+ON usu.user_t
 FOR EACH ROW
 BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
-END;
+END beforeUpdateUser;
 ----------------------------------------------------------------------------------------------
 --TABLE type_user
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInserttypeuser
+CREATE OR REPLACE TRIGGER usu.beforeInserttypeuser
 BEFORE INSERT
 ON usu.type_user
 FOR EACH ROW
 BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
-END;
+END beforeInserttypeuser;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatetypeuser
+CREATE OR REPLACE TRIGGER usu.beforeUpdatetypeuser
 BEFORE UPDATE
-ON usu.user
+ON usu.type_user
 FOR EACH ROW
 BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
-END;
+END beforeUpdatetypeuser;
 ----------------------------------------------------------------------------------------------
 --TABLE COUNTRY
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertCountry
+CREATE OR REPLACE TRIGGER usu.beforeInsertCountry
 BEFORE INSERT
 ON usu.country
 FOR EACH ROW
 BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
-END;
+END beforeInsertCountry;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateCountry
+CREATE OR REPLACE TRIGGER usu.beforeUpdateCountry
 BEFORE UPDATE
 ON usu.country
 FOR EACH ROW
 BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
-END;
+END beforeUpdateCountry;
 ----------------------------------------------------------------------------------------------
 --TABLE PROVINCE
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertProvince
+CREATE OR REPLACE TRIGGER usu.beforeInsertProvince
 BEFORE INSERT
 ON usu.province
 FOR EACH ROW
 BEGIN
     :new.creation_date:=SYSDATE;
     :new.creation_user:=USER;
-END;
+END beforeInsertProvince;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateProvince
+CREATE OR REPLACE TRIGGER usu.beforeUpdateProvince
 BEFORE UPDATE
 ON usu.province
 FOR EACH ROW
 BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
-END;
+END beforeUpdateProvince;
 ----------------------------------------------------------------------------------------------
 --TABLE CANTON
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertCanton
+CREATE OR REPLACE TRIGGER usu.beforeInsertCanton
 BEFORE INSERT
 ON usu.canton
 FOR EACH ROW
@@ -132,7 +133,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateCanton
+CREATE OR REPLACE TRIGGER usu.beforeUpdateCanton
 BEFORE UPDATE
 ON usu.canton
 FOR EACH ROW
@@ -143,7 +144,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --TABLE DISTRICT
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertDistrict
+CREATE OR REPLACE TRIGGER usu.beforeInsertDistrict
 BEFORE INSERT
 ON usu.district
 FOR EACH ROW
@@ -152,7 +153,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateDistrict
+CREATE OR REPLACE TRIGGER usu.beforeUpdateDistrict
 BEFORE UPDATE
 ON usu.district
 FOR EACH ROW
@@ -160,31 +161,10 @@ BEGIN
     :new.last_update_date:=SYSDATE;
     :new.last_update_user:=USER;
 END;
-----------------------------------------------------------------------------------------------
---TABLE community
-----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertCommunity
-BEFORE INSERT
-ON usu.community
-FOR EACH ROW
-BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
-END;
-
-CREATE OR REPLACE TRIGGER us.beforeUpdateCommunity
-BEFORE UPDATE
-ON usu.community
-FOR EACH ROW
-BEGIN
-    :new.last_update_date:=SYSDATE;
-    :new.last_update_user:=USER;
-END;
-
 ----------------------------------------------------------------------------------------------
 --Table product_photo
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertprophoto
+CREATE OR REPLACE TRIGGER usu.beforeInsertprophoto
 BEFORE INSERT
 ON usu.product_photo
 FOR EACH ROW
@@ -193,7 +173,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateprophoto
+CREATE OR REPLACE TRIGGER usu.beforeUpdateprophoto
 BEFORE UPDATE
 ON usu.product_photo
 FOR EACH ROW
@@ -205,7 +185,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table calification
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertcalifica
+CREATE OR REPLACE TRIGGER usu.beforeInsertcalifica
 BEFORE INSERT
 ON usu.calification
 FOR EACH ROW
@@ -214,7 +194,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatecalifica
+CREATE OR REPLACE TRIGGER usu.beforeUpdatecalifica
 BEFORE UPDATE
 ON usu.calification
 FOR EACH ROW
@@ -226,7 +206,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table purchase_history
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertpurhistory
+CREATE OR REPLACE TRIGGER usu.beforeInsertpurhistory
 BEFORE INSERT
 ON usu.purchase_history
 FOR EACH ROW
@@ -235,7 +215,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatepurhistory
+CREATE OR REPLACE TRIGGER usu.beforeUpdatepurhistory
 BEFORE UPDATE
 ON usu.purchase_history
 FOR EACH ROW
@@ -247,7 +227,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table nationality
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertnationality
+CREATE OR REPLACE TRIGGER usu.beforeInsertnationality
 BEFORE INSERT
 ON usu.nationality
 FOR EACH ROW
@@ -256,7 +236,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatenationality
+CREATE OR REPLACE TRIGGER usu.beforeUpdatenationality
 BEFORE UPDATE
 ON usu.nationality
 FOR EACH ROW
@@ -268,7 +248,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table message
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertmessage
+CREATE OR REPLACE TRIGGER usu.beforeInsertmessage
 BEFORE INSERT
 ON usu.message
 FOR EACH ROW
@@ -277,7 +257,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatemessage
+CREATE OR REPLACE TRIGGER usu.beforeUpdatemessage
 BEFORE UPDATE
 ON usu.message
 FOR EACH ROW
@@ -289,7 +269,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table conversation
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertconversation
+CREATE OR REPLACE TRIGGER usu.beforeInsertconversation
 BEFORE INSERT
 ON usu.conversation
 FOR EACH ROW
@@ -298,7 +278,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateconversation
+CREATE OR REPLACE TRIGGER usu.beforeUpdateconversation
 BEFORE UPDATE
 ON usu.conversation
 FOR EACH ROW
@@ -310,7 +290,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table phone_number
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertphonumber
+CREATE OR REPLACE TRIGGER usu.beforeInsertphonumber
 BEFORE INSERT
 ON usu.phone_number
 FOR EACH ROW
@@ -319,7 +299,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatephonumber
+CREATE OR REPLACE TRIGGER usu.beforeUpdatephonumber
 BEFORE UPDATE
 ON usu.phone_number
 FOR EACH ROW
@@ -330,7 +310,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table review
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertreview
+CREATE OR REPLACE TRIGGER usu.beforeInsertreview
 BEFORE INSERT
 ON usu.review
 FOR EACH ROW
@@ -339,7 +319,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatereview
+CREATE OR REPLACE TRIGGER usu.beforeUpdatereview
 BEFORE UPDATE
 ON usu.review
 FOR EACH ROW
@@ -350,7 +330,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table id_type
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertidtype
+CREATE OR REPLACE TRIGGER usu.beforeInsertidtype
 BEFORE INSERT
 ON usu.id_type
 FOR EACH ROW
@@ -359,7 +339,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateidtype
+CREATE OR REPLACE TRIGGER usu.beforeUpdateidtype
 BEFORE UPDATE
 ON usu.id_type
 FOR EACH ROW
@@ -370,7 +350,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table wish_list
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertwilist
+CREATE OR REPLACE TRIGGER usu.beforeInsertwilist
 BEFORE INSERT
 ON usu.wish_list
 FOR EACH ROW
@@ -379,7 +359,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatewilist
+CREATE OR REPLACE TRIGGER usu.beforeUpdatewilist
 BEFORE UPDATE
 ON usu.wish_list
 FOR EACH ROW
@@ -391,7 +371,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table shopping_car
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertshopcar
+CREATE OR REPLACE TRIGGER usu.beforeInsertshopcar
 BEFORE INSERT
 ON usu.shopping_car
 FOR EACH ROW
@@ -400,7 +380,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdateshopcar
+CREATE OR REPLACE TRIGGER usu.beforeUpdateshopcar
 BEFORE UPDATE
 ON usu.shopping_car
 FOR EACH ROW
@@ -412,7 +392,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table purchase
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertpurchase
+CREATE OR REPLACE TRIGGER usu.beforeInsertpurchase
 BEFORE INSERT
 ON usu.purchase
 FOR EACH ROW
@@ -421,7 +401,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatepurchase
+CREATE OR REPLACE TRIGGER usu.beforeUpdatepurchase
 BEFORE UPDATE
 ON usu.purchase
 FOR EACH ROW
@@ -433,7 +413,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table watch
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertwatch
+CREATE OR REPLACE TRIGGER usu.beforeInsertwatch
 BEFORE INSERT
 ON usu.watch
 FOR EACH ROW
@@ -442,7 +422,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatewatch
+CREATE OR REPLACE TRIGGER usu.beforeUpdatewatch
 BEFORE UPDATE
 ON usu.watch
 FOR EACH ROW
@@ -453,7 +433,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table brand
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertbrand
+CREATE OR REPLACE TRIGGER usu.beforeInsertbrand
 BEFORE INSERT
 ON usu.brand
 FOR EACH ROW
@@ -462,7 +442,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatebrand
+CREATE OR REPLACE TRIGGER usu.beforeUpdatebrand
 BEFORE UPDATE
 ON usu.brand
 FOR EACH ROW
@@ -473,7 +453,7 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table model
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertmodel
+CREATE OR REPLACE TRIGGER usu.beforeInsertmodel
 BEFORE INSERT
 ON usu.model
 FOR EACH ROW
@@ -482,7 +462,7 @@ BEGIN
     :new.creation_user:=USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatemodel
+CREATE OR REPLACE TRIGGER usu.beforeUpdatemodel
 BEFORE UPDATE
 ON usu.model
 FOR EACH ROW
@@ -494,16 +474,16 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table condition
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertcondition
+CREATE OR REPLACE TRIGGER usu.beforeInsertcondition
 BEFORE INSERT
 ON usu.condition
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatecondition
+CREATE OR REPLACE TRIGGER usu.beforeUpdatecondition
 BEFORE UPDATE
 ON usu.condition
 FOR EACH ROW
@@ -515,16 +495,17 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table type_shipping
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInserttshipping
+CREATE OR REPLACE TRIGGER usu.beforeInserttshipping
 BEFORE INSERT
 ON usu.type_shipping
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatetshipping
+
+CREATE OR REPLACE TRIGGER usu.beforeUpdatetshipping
 BEFORE UPDATE
 ON usu.type_shipping
 FOR EACH ROW
@@ -535,157 +516,188 @@ END;
 ----------------------------------------------------------------------------------------------
 --Table style
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertstyle
+CREATE OR REPLACE TRIGGER usu.beforeInsertstyle
 BEFORE INSERT
 ON usu.style
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatestyle
+CREATE OR REPLACE TRIGGER usu.beforeUpdatestyle
 BEFORE UPDATE
 ON usu.style
 FOR EACH ROW
 BEGIN
-    :new.last_update_date:=SYSDATE;
-    :new.last_update_user:=USER;
+    :new.last_update_date:= SYSDATE;
+    :new.last_update_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --Table category
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertcategory
+CREATE OR REPLACE TRIGGER usu.beforeInsertcategory
 BEFORE INSERT
 ON usu.category
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatecategory
+CREATE OR REPLACE TRIGGER usu.beforeUpdatecategory
 BEFORE UPDATE
 ON usu.category
 FOR EACH ROW
 BEGIN
-    :new.last_update_date:=SYSDATE;
-    :new.last_update_user:=USER;
+    :new.last_update_date:= SYSDATE;
+    :new.last_update_user:= USER;
 END;
 
 ----------------------------------------------------------------------------------------------
 --Table binnacle_price
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertbiprice
+CREATE OR REPLACE TRIGGER usu.beforeInsertbiprice
 BEFORE INSERT
 ON usu.binnacle_price
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatebiprice
+CREATE OR REPLACE TRIGGER usu.beforeUpdatebiprice
 BEFORE UPDATE
 ON usu.binnacle_price
 FOR EACH ROW
 BEGIN
-    :new.last_update_date:=SYSDATE;
-    :new.last_update_user:=USER;
+    :new.last_update_date:= SYSDATE;
+    :new.last_update_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --Table binnacle_price
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertbiprice
+CREATE OR REPLACE TRIGGER usu.beforeInsertbiprice
 BEFORE INSERT
 ON usu.binnacle_price
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatebiprice
+CREATE OR REPLACE TRIGGER usu.beforeUpdatebiprice
 BEFORE UPDATE
 ON usu.binnacle_price
 FOR EACH ROW
 BEGIN
-    :new.last_update_date:=SYSDATE;
-    :new.last_update_user:=USER;
+    :new.last_update_date:= SYSDATE;
+    :new.last_update_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --Table previous_price
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertpreprice
+CREATE OR REPLACE TRIGGER usu.beforeInsertpreprice
 BEFORE INSERT
 ON usu.previous_price
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
-CREATE OR REPLACE TRIGGER us.beforeUpdatepreprice
+CREATE OR REPLACE TRIGGER usu.beforeUpdatepreprice
 BEFORE UPDATE
 ON usu.previous_price
 FOR EACH ROW
 BEGIN
-    :new.last_update_date:=SYSDATE;
-    :new.last_update_user:=USER;
+    :new.last_update_date:= SYSDATE;
+    :new.last_update_user:= USER;
+END;
+----------------------------------------------------------------------------------------------
+--Table previous_price
+----------------------------------------------------------------------------------------------
+CREATE OR REPLACE TRIGGER usu.beforeInserpaymentmethod
+BEFORE INSERT
+ON usu.payment_method
+FOR EACH ROW
+BEGIN
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
+END;
+
+CREATE OR REPLACE TRIGGER usu.beforeUpdatepaymentmethod
+BEFORE UPDATE
+ON usu.payment_method
+FOR EACH ROW
+BEGIN
+    :new.last_update_date:= SYSDATE;
+    :new.last_update_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --TABLE watchxwish_list
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertwXl
+CREATE OR REPLACE TRIGGER usu.beforeInsertwXl
 BEFORE INSERT
 ON usu.watchxwish_list
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 
 ----------------------------------------------------------------------------------------------
 --Table watchxtype_shipping
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertwxts
+CREATE OR REPLACE TRIGGER usu.beforeInsertwxts
 BEFORE INSERT
 ON usu.watchxtype_shipping
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --Table userxwatch
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertuseruxw
+CREATE OR REPLACE TRIGGER usu.beforeInsertuseruxw
 BEFORE INSERT
 ON usu.userxwatch
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --Table watchxshopping_car
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertwxsc
+CREATE OR REPLACE TRIGGER usu.beforeInsertwxsc
 BEFORE INSERT
 ON usu.watchxshopping_car
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
 ----------------------------------------------------------------------------------------------
 --Table userxcalification
 ----------------------------------------------------------------------------------------------
-CREATE OR REPLACE TRIGGER us.beforeInsertuxcali
+CREATE OR REPLACE TRIGGER usu.beforeInsertuxcali
 BEFORE INSERT
 ON usu.userxcalification
 FOR EACH ROW
 BEGIN
-    :new.creation_date:=SYSDATE;
-    :new.creation_user:=USER;
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
+END;
+----------------------------------------------------------------------------------------------
+--Table personxnationality
+----------------------------------------------------------------------------------------------
+CREATE OR REPLACE TRIGGER usu.beforeInsertperxnati
+BEFORE INSERT
+ON usu.personxnationality
+FOR EACH ROW
+BEGIN
+    :new.creation_date:= SYSDATE;
+    :new.creation_user:= USER;
 END;
