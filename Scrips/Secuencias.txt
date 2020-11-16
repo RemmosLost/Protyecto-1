@@ -1,0 +1,225 @@
+--TABLE photo
+CREATE SEQUENCE s_photo
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+
+--TABLE type_user
+CREATE SEQUENCE s_type_user
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE country
+CREATE SEQUENCE s_country
+START WITH          23
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE province
+CREATE SEQUENCE s_province
+START WITH          8
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE canton
+CREATE SEQUENCE s_canton
+START WITH          82
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE district
+CREATE SEQUENCE s_district
+START WITH          1
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE product_photo
+CREATE SEQUENCE s_product_photo
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE calification
+CREATE SEQUENCE s_calification
+START WITH          1
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE purchase_history
+CREATE SEQUENCE s_purchase_history
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE nationality
+CREATE SEQUENCE s_nationality
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE conversation
+CREATE SEQUENCE s_conversation
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE phone_number
+CREATE SEQUENCE s_phone_number
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE review
+CREATE SEQUENCE s_review
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE id_type
+CREATE SEQUENCE s_id_type
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            1000000
+NOCACHE
+NOCYCLE;
+
+--TABLE wish_list
+CREATE SEQUENCE s_wish_list
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            1000000
+NOCACHE
+NOCYCLE;
+
+--TABLE shopping_car
+CREATE SEQUENCE s_shopping_car
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE purchase
+CREATE SEQUENCE s_purchase
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE brand 
+CREATE SEQUENCE s_brand 
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE model 
+CREATE SEQUENCE s_model
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10000000
+NOCACHE
+NOCYCLE;
+
+--TABLE condition
+CREATE SEQUENCE s_condition
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            1000000
+NOCACHE
+NOCYCLE;
+
+--TABLE type_shipping
+CREATE SEQUENCE s_type_shipping
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            100000
+NOCACHE
+NOCYCLE;
+
+--TABLE style
+CREATE SEQUENCE s_style
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            100000
+NOCACHE
+NOCYCLE;
+
+--TABLE category
+CREATE SEQUENCE s_category
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            1000000
+NOCACHE
+NOCYCLE;
+
+--TABLE binnacle_price
+CREATE SEQUENCE s_binnacle_price
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            1000000
+NOCACHE
+NOCYCLE;
+
+--TABLE previous_price
+CREATE SEQUENCE s_previous_price
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            1000000
+NOCACHE
+NOCYCLE;

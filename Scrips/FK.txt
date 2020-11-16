@@ -1,0 +1,100 @@
+ALTER TABLE person
+    ADD (CONSTRAINT fk_person_type FOREIGN KEY (id_type) REFERENCES id_type(id_type),
+        CONSTRAINT fk_person_distric FOREIGN KEY (id_distric) REFERENCES distric(id_distric),
+        CONSTRAINT fk_person_photo FOREIGN KEY (id_photo) REFERENCES photo(id_photo)
+        );
+
+ALTER TABLE user_t
+    ADD (CONSTRAINT fk_user_typeus FOREIGN KEY (id_type_user) REFERENCES type_user(id_type_user),
+         CONSTRAINT fk_user_person FOREIGN KEY (id_person) REFERENCES person(id_person),
+	 CONSTRAINT fk_user_purcha FOREIGN KEY (id_purchase) REFERENCES purchase_history(id_purchase_history)
+);
+
+ALTER TABLE province
+    ADD CONSTRAINT fk_province_country FOREIGN KEY (id_country) REFERENCES country(id_country);
+
+ALTER TABLE canton
+    ADD CONSTRAINT fk_canton_province FOREIGN KEY (id_province) REFERENCES province(id_province);
+
+ALTER TABLE district
+    ADD CONSTRAINT fk_district_canton FOREIGN KEY (id_canton) REFERENCES canton(id_canton);
+    
+ALTER TABLE community
+    ADD CONSTRAINT fk_community_district FOREIGN KEY (id_district) REFERENCES district(id_district);
+
+ALTER TABLE product_photo
+    ADD CONSTRAINT fk_pphoto_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch);
+    
+ALTER TABLE purchase_history
+    ADD CONSTRAINT fk_phistory_user FOREIGN KEY (username) REFERENCES user_t(username);
+    
+ALTER TABLE nationality
+    ADD CONSTRAINT fk_nationa_person FOREIGN KEY (id_person) REFERENCES person(id_person);
+    
+ALTER TABLE message
+    ADD (CONSTRAINT fk_message_conversa FOREIGN KEY (id_person) REFERENCES person(id_person),
+         CONSTRAINT fk_message_username FOREIGN KEY (username) REFERENCES user_t(username)
+);
+
+ALTER TABLE phone_number
+    ADD CONSTRAINT fk_pnumber_person FOREIGN KEY (id_person) REFERENCES person(id_person);
+
+ALTER TABLE review
+    ADD (CONSTRAINT fk_review_purchase FOREIGN KEY (id_purchase) REFERENCES purchase(id_purchase),
+         CONSTRAINT fk_review_califica FOREIGN KEY (id_calification) REFERENCES calification(id_calification)
+);
+
+ALTER TABLE wish_list
+    ADD CONSTRAINT fk_wlist_username FOREIGN KEY (username) REFERENCES user_t(username);
+
+ALTER TABLE shopping_car
+    ADD (CONSTRAINT fk_shocar_purchase FOREIGN KEY (id_purchase) REFERENCES purchase(id_purchase),
+         CONSTRAINT fk_shocar__username FOREIGN KEY (username) REFERENCES user_t(username)
+);
+    
+ALTER TABLE purchase
+    ADD CONSTRAINT fk_purchase_paymethod FOREIGN KEY (id_payment_method) REFERENCES payment_method(id_payment_method);
+
+ALTER TABLE watch
+    ADD (CONSTRAINT fk_watch_condition FOREIGN KEY (id_condition) REFERENCES condition(id_condition),
+        CONSTRAINT fk_watch_brand FOREIGN KEY (id_brand) REFERENCES brand(id_brand),
+        CONSTRAINT fk_watch_category FOREIGN KEY (id_category) REFERENCES category(id_category),
+        CONSTRAINT fk_watch_style FOREIGN KEY (id_style) REFERENCES style(id_style)
+);
+
+ALTER TABLE model
+    ADD CONSTRAINT fk_model_brand FOREIGN KEY (id_brand) REFERENCES brand(id_brand);
+
+ALTER TABLE binnacle_price
+    ADD CONSTRAINT fk_binprice_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch);
+
+ALTER TABLE previous_price
+    ADD CONSTRAINT fk_preprice_binnacle FOREIGN KEY (id_binnacle) REFERENCES binnacle_price(id_binnacle);
+      
+
+--NxN
+
+
+ALTER TABLE watchxwish_list
+    ADD (CONSTRAINT fk_wXwl_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch),
+        CONSTRAINT fk_wxwl_wishlist FOREIGN KEY (id_wish_list) REFERENCES wish_list(id_wish_list)
+);
+ALTER TABLE watchxtype_shipping
+    ADD (CONSTRAINT fk_wXts_shipping FOREIGN KEY (id_shipping) REFERENCES type_shipping(id_shipping),
+        CONSTRAINT fk_wXts_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch)
+);
+
+ALTER TABLE userxwatch
+    ADD (CONSTRAINT fk_uXw_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch),
+        CONSTRAINT fk_uXw_username FOREIGN KEY (username) REFERENCES user_t(username)
+);
+
+ALTER TABLE watchxshopping_car
+    ADD (CONSTRAINT fk_wXsc_watch FOREIGN KEY (id_watch) REFERENCES watch(id_watch),
+        CONSTRAINT fk_wXsc_shopping_car FOREIGN KEY (id_shopping_car) REFERENCES shopping_car(id_shopping_car)
+);
+
+ALTER TABLE userxcalification
+    ADD (CONSTRAINT fk_uXc_califi FOREIGN KEY (id_calification) REFERENCES calification(id_calification),
+        CONSTRAINT fk_uXc_username FOREIGN KEY (username) REFERENCES user_t(username)
+);
