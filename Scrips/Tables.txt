@@ -366,6 +366,16 @@ CREATE TABLE previous_price(
     last_update_date            DATE,
     last_update_user            VARCHAR2(25)
 );
+CREATE TABLE payment_method(
+    id_payment_method       NUMBER(30),
+    description             VARCHAR2(25) CONSTRAINT pmethod_date_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT pmethod_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT pmethod_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
 
 ------------------------------------------------------------------------------------------------------
 --Relations NXN
@@ -424,16 +434,7 @@ CREATE TABLE personxnationality(
     creation_user               VARCHAR2(25) CONSTRAINT pxn_creationuser_nn NOT NULL
 );
 
-CREATE TABLE payment_method(
-    id_payment_method       NUMBER(30),
-    description             VARCHAR2(25) CONSTRAINT pmethod_date_nn NOT NULL,
-    --FK
-    --AUDIT FIELDS
-    creation_date           DATE CONSTRAINT pmethod_creationdate_nn NOT NULL,
-    creation_user           VARCHAR2(25) CONSTRAINT pmethod_creationuser_nn NOT NULL,
-    last_update_date        DATE,
-    last_update_user        VARCHAR2(25)
-);
+
 
 
 ----------------------------------------------------------------------------------------
