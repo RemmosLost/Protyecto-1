@@ -1,0 +1,68 @@
+--Person
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('125385779', 'Amelia', 'Daniel', 'Soto','Quiros', DATE'1955-05-02', '500 mts del palo de mango del restaurante Doña Juana, casa café' , 'amely02@gmail.com' , 1, 250, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('257985779', 'Carlos', 'Antonio', 'Lizano','Vargas', DATE'1989-05-26', '100 mts del anfiteatro de Manue, casa 15C' , 'carantol@gmail.com' , 1, 322, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('102568993', 'María', 'Antonia', 'Castillo','Logos', DATE'1930-10-10', 'De la última parada de San Isidro 300mts al Norte, casa celeste' , 'mariantonienta@gmail.com' , 1, 319, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('500235779', 'Ricardo', 'Sergio', 'Vargas','Blanco', DATE'1950-12-16', 'Detras de los departamentos El Roble, primera casa amarilla' , 'sergio16@gmail.com' , 1, 366, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('500235009', 'Berta', 'Daniela', 'Mora','Marín', DATE'1990-07-03', '100mts del cafetal de Marcos, la casa que sigue de color verde' , 'bertia90@gmail.com' , 1, 380, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('k12345678', 'Carón', 'Elizabeth', 'Sample','Marín', DATE'1966-11-01', 'Del SuperHereia 50mts al Sur, casa con dos arbustos' , 'sample6601@gmail.com' , 2,289, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('117310571', 'Rebeca', 'María', 'Madrigal','Arguedas', DATE'1999-01-07', 'Del antigua Ñangazo 75mts al Norte, la casa 9B' , 'rmma070199@gmail.com' , 1, 107, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('117310571', 'Rebeca', 'María', 'Madrigal','Arguedas', DATE'1999-01-07', 'Del antigua Ñangazo 75mts al Norte, la casa 9B' , 'rmma070199@gmail.com' , 1, 107, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('117310571', 'María', NULL, 'Melano','Cierra', DATE'1980-11-30', 'Del árbol de poro 400mts al Este, casa con cochera gris' , 'melano19@gmail.com' , 1,285, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('113730331', 'Unberto', 'Berto', 'Barbosa','Bermudes', DATE'1954-06-06', 'Del las Bodegas 200mts al Noreste y 50mst al Sur, casa marrón' , 'bbbb664@gmail.com' , 1, 216, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('718880331', 'Calvin', 'Carlo', 'Castro','Castillo', DATE'1973-02-14', 'De la soda Upalita, 300mts al Norte, en el palo de manzanas de agua' , 'calvin1973@gmail.com' , 1, 223, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('313731105', 'Enzo', 'Lucrecio', 'Suárez','Zeledón', DATE'1961-12-22', 'A la vuela de la ferreteria El Pepe, casa con portón negro' , 'lucre22@gmail.com' , 1, 316, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('113730331', 'Josep', 'Thiago', 'Jurado','Juez', DATE'1989-12-31', 'La casa de la izquierda de la veterinaria de Tures' , 'juez31@gmail.com' , 1, 306, USER, SYSDATE);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
+VALUES ('113236231', 'Laura', 'Lucrecia', 'Pedrero','Pedrasco', DATE'1996-07-07', 'Del chino de la última parada de San Rafael, 200,mts al Norte, casa con portón blanco' , 'llpiedra@gmail.com' , 1, 314, USER, SYSDATE);
+
+--ID_TYPE
+INSERT INTO id_type(id_type, name , creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Cédula de Identidad',  USER, SYSDATE);
+
+INSERT INTO id_type(id_type, name , creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Pasaporte',  USER, SYSDATE);
+
+INSERT INTO id_type(id_type, name , creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Cédula de Residencia',  USER, SYSDATE);
+
+INSERT INTO id_type(id_type, name , creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Otro',  USER, SYSDATE);
+
+--Nationality
+INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Costarricense', USER, SYSDATE);
+
+INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Canadiense', USER, SYSDATE);
+
+INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Mexicano', USER, SYSDATE);
+
+INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
+VALUES (S_ID_TYPE.nextval, 'Venezolano', USER, SYSDATE);
