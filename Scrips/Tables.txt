@@ -1,0 +1,446 @@
+----------------------------------------------------------------------------------------
+--Schema usu
+----------------------------------------------------------------------------------------
+
+CREATE TABLE person(
+    id_person           VARCHAR2(30),
+    first_name          VARCHAR2(20) CONSTRAINT person_firstname_nn NOT NULL,
+    middle_name         VARCHAR2(25),
+    first_surname       VARCHAR2(25) CONSTRAINT person_lastname_nn NOT NULL,
+    second_surname      VARCHAR2(25),
+    date_birth          DATE CONSTRAINT person_datebirth_nn NOT NULL,
+    direction           VARCHAR2(100),
+    email 		VARCHAR2(100),
+    --FK
+    id_type             NUMBER(4) CONSTRAINT person_type_nn NOT NULL,
+    id_district         NUMBER(5) CONSTRAINT person_iddistrict_nn NOT NULL,
+    id_photo            NUMBER(5) ,
+    --AUDIT FIELDS
+    creation_date       DATE CONSTRAINT person_creationdate_nn NOT NULL,
+    creation_user       VARCHAR2(25) CONSTRAINT person_creationuser_nn NOT NULL,
+    last_update_date    DATE,
+    last_update_user    VARCHAR2(25)
+);
+
+CREATE TABLE photo(
+    id_photo                NUMBER(10),
+    photograph              BLOB,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT photo_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT photo_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE user_t(
+    username                VARCHAR2(50),
+    user_password           VARCHAR2(40) CONSTRAINT usernam_userpass_nn NOT NULL,
+    --FK
+    id_person               VARCHAR2(30) CONSTRAINT usernam_idperso_nn NOT NULL,
+    id_type_user	        NUMBER(10) CONSTRAINT usernam_idtypeu_nn NOT NULL,
+    id_purchase		        NUMBER(10) CONSTRAINT usernam_idpurch_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT usernam_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT usernam_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE type_user(
+    id_type_user            NUMBER(10),
+    name		    VARCHAR2(100) CONSTRAINT typeuser_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT typeuser_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT typeuser_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+
+CREATE TABLE country(
+    id_country              NUMBER(10),
+    name		    VARCHAR2(30) CONSTRAINT country_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT country_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT country_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+    
+);
+
+CREATE TABLE province(
+    id_province             NUMBER(10),
+    name 		    VARCHAR2(30) CONSTRAINT province_name_nn NOT NULL,
+    --FK
+    id_country              NUMBER(10) CONSTRAINT province_idcountry_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT province_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT province_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE canton(
+    id_canton               NUMBER(10),
+    name		    VARCHAR2(30) CONSTRAINT canton_name_nn NOT NULL,
+    --FK
+    id_province             NUMBER(10) CONSTRAINT canton_idprovince_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT canton_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT canton_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE district(
+    id_district             NUMBER(10),
+    name		    VARCHAR2(30) CONSTRAINT district_name_nn NOT NULL,
+    --FK
+    id_canton               NUMBER(10) CONSTRAINT district_idcanton_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT district_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT district_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE product_photo(
+    id_watch_photo          NUMBER(10),
+    photograph              BLOB,
+    name		    VARCHAR2(25),
+    --FK
+    id_watch		    NUMBER(10) CONSTRAINT pphoto_idwatchpho_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT pphoto_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT pphoto_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE calification(
+    id_calification         NUMBER(10),
+    type	            VARCHAR2(30) CONSTRAINT califi_type_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT califi_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT califi_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE purchase_history(
+    id_purchase_history     NUMBER(30),
+    purchase_history_date   Date CONSTRAINT phise_date_nn NOT NULL,
+    --FK
+    username	            VARCHAR2(30) CONSTRAINT phis_username_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT phis_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT phis_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE nationality(
+    id_nationality     	    NUMBER(30),
+    name                    VARCHAR2(25) CONSTRAINT natio_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT natio_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT natio_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE message(
+    id_message     	    NUMBER(30),
+    text                    VARCHAR2(400) CONSTRAINT message_text_nn NOT NULL,
+    --FK
+    id_conversation         NUMBER(10) CONSTRAINT message_idconver_nn NOT NULL,
+    username                VARCHAR2(30) CONSTRAINT message_username_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT message_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT message_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE conversation(
+    id_conversation    	    NUMBER(30),
+    conversation_date       Date CONSTRAINT conver_date_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT conver_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT conver_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE phone_number(
+    id_phone_number    	    NUMBER(10),
+    phone_number            NUMBER(10) CONSTRAINT phone_number_nn NOT NULL,
+    --FK
+    id_person               VARCHAR2(30) CONSTRAINT phone_idperson_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT phone_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT phone_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE review(
+    id_review    	    NUMBER(10),
+    buyer_calification      NUMBER(1) CONSTRAINT review_buyercali_nn NOT NULL,
+    buyer_comment           VARCHAR2(25) CONSTRAINT review_buyercomm_nn NOT NULL,
+    seller_calification     NUMBER(1) CONSTRAINT review_sellercali_nn NOT NULL,
+    seller_comment          VARCHAR2(25) CONSTRAINT review_sellercomm_nn NOT NULL,
+    product_calification    NUMBER(1) CONSTRAINT review_prodcali_nn NOT NULL,  
+    --FK
+    id_purchase             NUMBER(10) CONSTRAINT review_idpurcha_nn NOT NULL,
+    id_calification         NUMBER(10) CONSTRAINT review_idcalifi_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT review_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT review_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE id_type(
+    id_type      	    NUMBER(30),
+    name                    VARCHAR2(25) CONSTRAINT idtype_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT idtype_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT idtype_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE wish_list(
+    id_wish_list    	    NUMBER(10),
+    wish_list_date          DATE CONSTRAINT wish_date_nn NOT NULL,
+    note                    VARCHAR2(25) CONSTRAINT wish_note_nn NOT NULL,
+    --FK
+    username                VARCHAR2(25) CONSTRAINT wish_username_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT wish_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT wish_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+
+CREATE TABLE shopping_car(
+    id_shopping_car   	    NUMBER(25),
+    shopping_car_date       DATE CONSTRAINT shoppcar_date_nn NOT NULL,
+    --FK
+    id_purchase             NUMBER(10) CONSTRAINT shoppcar_idpurcha_nn NOT NULL,
+    username                VARCHAR2(25) CONSTRAINT shoppcar_username_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT shoppcar_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT shoppcar_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE purchase(
+    id_purchase   	    NUMBER(25),
+    purchase_date           DATE CONSTRAINT purcha_date_nn NOT NULL,
+    --FK
+    id_payment_method       NUMBER(10) CONSTRAINT purcha_idpaymet_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT purcha_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT purcha_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE watch (
+    id_watch     	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT watch_name_nn NOT NULL,
+    price                   NUMBER(20) CONSTRAINT watch_price_nn NOT NULL,
+    description  	    VARCHAR2(30) CONSTRAINT watch_descip_nn NOT NULL,
+    date_manufacturing 	    DATE CONSTRAINT watch_date_nn NOT NULL,
+    --FK
+    id_condition            NUMBER(10) CONSTRAINT watch_idcondi_nn NOT NULL,
+    id_brand		    NUMBER(10) CONSTRAINT watch_idbrand_nn NOT NULL,
+    id_category		    NUMBER(10) CONSTRAINT watch_idcateg_nn NOT NULL,
+    id_style		    NUMBER(10) CONSTRAINT watch_idstyle_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT watch_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT watch_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE brand (
+    id_brand    	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT brand_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT brand_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT brand_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE model (
+    id_model     	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT model_name_nn NOT NULL,
+    --FK
+    id_brand                NUMBER(10) CONSTRAINT model_idbrand_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT model_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT model_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE condition  (
+    id_condition     	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT condit_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT condit_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT condit_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE type_shipping  (
+    id_shipping    	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT shipp_name_nn NOT NULL,
+    description  	    VARCHAR2(30) CONSTRAINT shipp_descip_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT shipp_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT shipp_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE style  (
+    id_style    	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT style_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT style_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT style_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE category  (
+    id_category    	    NUMBER(25),
+    name                    VARCHAR2(30) CONSTRAINT catego_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT catego_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT catego_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE binnacle_price(
+    id_binnacle             NUMBER(4),
+    date_change             DATE CONSTRAINT binna_datechange_nn NOT NULL,
+    --FK
+    id_watch     	    NUMBER(25) CONSTRAINT binna_idwatch_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT binna_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT binna_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE previous_price(
+    id_previous                 NUMBER(4),
+    previous_price              VARCHAR2(20) CONSTRAINT previ_previprice_nn NOT NULL,
+    --FK
+    id_binnacle                 NUMBER(4) CONSTRAINT previ_idbinnacle_nn NOT NULL,
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT previ_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT previ_creationuser_nn NOT NULL,
+    last_update_date            DATE,
+    last_update_user            VARCHAR2(25)
+);
+CREATE TABLE payment_method(
+    id_payment_method       NUMBER(30),
+    description             VARCHAR2(25) CONSTRAINT pmethod_date_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT pmethod_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT pmethod_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+------------------------------------------------------------------------------------------------------
+--Relations NXN
+------------------------------------------------------------------------------------------------------
+CREATE TABLE watchxwish_list(
+    id_watch                    NUMBER(15),
+    id_wish_list                NUMBER(15),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT wxwl_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT wxwl_creationuser_nn NOT NULL
+);
+
+CREATE TABLE watchxtype_shipping(
+    id_watch                    NUMBER(15),
+    id_shipping                 NUMBER(15),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT wxts_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT wxts_creationuser_nn NOT NULL
+);
+
+CREATE TABLE userxwatch(
+    id_watch                    NUMBER(15),
+    username                    VARCHAR2(25),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT uxw_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT uxw_creationuser_nn NOT NULL
+);
+
+CREATE TABLE watchxshopping_car(
+    id_watch                    NUMBER(15),
+    id_shopping_car             NUMBER(15),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT wxsc_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT wxsc_creationuser_nn NOT NULL
+);
+
+CREATE TABLE userxcalification(
+    username                    VARCHAR2(25),
+    id_calification             NUMBER(15),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT uxc_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT uxs_creationuser_nn NOT NULL
+);
+
+CREATE TABLE personxnationality(
+    id_person                   VARCHAR2(30),
+    id_nationality              NUMBER(15),
+    --FK 
+    --AUDIT FIELDS
+    creation_date               DATE CONSTRAINT pxn_creationdate_nn NOT NULL,
+    creation_user               VARCHAR2(25) CONSTRAINT pxn_creationuser_nn NOT NULL
+);
+
+
+
+
+----------------------------------------------------------------------------------------
+--Schema par
+--Table that stores parameter data
+---------------------------------------------------------------------------------------
+CREATE TABLE parameters_t(
+    name         VARCHAR2(100),
+    values_p     NUMBER(2)); 

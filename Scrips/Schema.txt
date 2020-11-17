@@ -1,0 +1,220 @@
+--Schema
+
+CREATE TABLESPACE par_data
+DATAFILE 'C:\app\WinReb\oradata\PROYECTO01\par_data01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+
+CREATE TABLESPACE par_index
+DATAFILE 'C:\app\WinReb\oradata\PROYECT01\par_index01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+---------------------------------------------------------------------
+CREATE TABLESPACE usu_data
+DATAFILE 'C:\app\WinReb\oradata\PROYECTO01\us_data01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+
+CREATE TABLESPACE usu_index
+DATAFILE 'C:\app\WinReb\oradata\PROYECT01\usu_index01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+-----------------------------------------------------------------------
+
+CREATE USER par
+IDENTIFIED BY par156
+DEFAULT TABLESPACE par_data
+QUOTA 10M ON par_data
+TEMPORARY TABLESPACE temp
+QUOTA 5M ON system;
+
+CREATE USER usu
+IDENTIFIED BY usu156
+DEFAULT TABLESPACE usu_data
+QUOTA 10M ON usu_data
+TEMPORARY TABLESPACE temp
+QUOTA 5M ON system;
+
+-----------------------------------------------------------------------
+
+GRANT CONNECT TO usu;
+
+GRANT CREATE SESSION TO usu;
+
+GRANT CREATE TABLE TO usu;
+
+GRANT UNLIMITED TABLESPACE TO usu;
+
+GRANT CREATE VIEW TO usu;
+
+GRANT CREATE TRIGGER TO usu;
+
+GRANT CREATE SEQUENCE TO usu;
+
+GRANT CREATE PROCEDURE TO usu;
+
+GRANT CREATE ANY DIRECTORY TO usu;
+
+GRANT READ, WRITE ON DIRECTORY picture_directory TO usu;
+
+GRANT EXECUTE ON DBMS_CRYPTO TO usu;
+
+GRANT EXECUTE ON SYS.DBMS_CRYPTO TO usu; --ON SYSDBA
+
+GRANT CREATE SESSION TO usu WITH ADMIN OPTION;
+
+GRANT CREATE USER TO usu;
+
+GRANT CREATE ROLE TO usu;
+
+-----------------------------------------------------------------------
+
+
+GRANT CONNECT TO par;
+
+GRANT CREATE SESSION TO par;
+
+GRANT CREATE TABLE TO par;
+
+GRANT UNLIMITED TABLESPACE TO par;
+
+GRANT CREATE VIEW TO par;
+
+GRANT CREATE TRIGGER TO par;
+
+GRANT CREATE SEQUENCE TO par;
+
+GRANT CREATE PROCEDURE TO par;
+
+GRANT CREATE ANY DIRECTORY TO par;
+
+GRANT READ, WRITE ON DIRECTORY picture_directory TO par;
+
+GRANT EXECUTE ON DBMS_CRYPTO TO par;
+
+GRANT EXECUTE ON SYS.DBMS_CRYPTO TO par; --ON SYSDBA
+
+GRANT CREATE SESSION TO par WITH ADMIN OPTION;
+
+GRANT CREATE USER TO par;
+
+GRANT CREATE ROLE TO par;
+
+
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--Schema
+
+CREATE TABLESPACE par_data
+DATAFILE 'C:\app\WinReb\oradata\PROYECT01\par_data01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+
+CREATE TABLESPACE par_index
+DATAFILE 'C:\app\WinReb\oradata\PROYECT01\par_index01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+---------------------------------------------------------------------
+CREATE TABLESPACE usu_data
+DATAFILE 'C:\app\WinReb\oradata\PROYECT01\us_data01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+
+CREATE TABLESPACE usu_index
+DATAFILE 'C:\app\WinReb\oradata\PROYECT01\usu_index01.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512K
+MAXSIZE 200M;
+-----------------------------------------------------------------------
+
+CREATE USER par
+IDENTIFIED BY par156
+DEFAULT TABLESPACE par_data
+QUOTA 10M ON par_data
+TEMPORARY TABLESPACE temp
+QUOTA 5M ON system;
+
+CREATE USER usu
+IDENTIFIED BY usu156
+DEFAULT TABLESPACE usu_data
+QUOTA 10M ON usu_data
+TEMPORARY TABLESPACE temp
+QUOTA 5M ON system;
+
+-----------------------------------------------------------------------
+
+GRANT CONNECT TO usu;
+
+GRANT CREATE SESSION TO usu;
+
+GRANT CREATE TABLE TO usu;
+
+GRANT UNLIMITED TABLESPACE TO usu;
+
+GRANT CREATE VIEW TO usu;
+
+GRANT CREATE TRIGGER TO usu;
+
+GRANT CREATE SEQUENCE TO usu;
+
+GRANT CREATE PROCEDURE TO usu;
+
+GRANT CREATE ANY DIRECTORY TO usu;
+
+--GRANT CREATE SESSION TO usu WITH ADMIN OPTION;
+
+GRANT CREATE USER TO usu;
+
+GRANT CREATE ROLE TO usu;
+
+-----------------------------------------------------------------------
+
+
+GRANT CONNECT TO par;
+
+GRANT CREATE SESSION TO par;
+
+GRANT CREATE TABLE TO par;
+
+GRANT UNLIMITED TABLESPACE TO par;
+
+GRANT CREATE VIEW TO par;
+
+GRANT CREATE TRIGGER TO par;
+
+GRANT CREATE SEQUENCE TO par;
+
+GRANT CREATE PROCEDURE TO par;
+
+GRANT CREATE ANY DIRECTORY TO par;
+
+
+--GRANT CREATE SESSION TO par WITH ADMIN OPTION;
+
+GRANT CREATE USER TO par;
+
+GRANT CREATE ROLE TO par;

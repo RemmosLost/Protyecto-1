@@ -1,0 +1,305 @@
+ALTER TABLE person
+    ADD CONSTRAINT pk_person PRIMARY KEY (id_person)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE photo
+    ADD CONSTRAINT pk_photo PRIMARY KEY (id_photo)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE nationality
+    ADD CONSTRAINT pk_nationality PRIMARY KEY (id_nationality)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE id_type
+    ADD CONSTRAINT pk_id_type PRIMARY KEY (id_type)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE phone_number
+    ADD CONSTRAINT pk_phone_number PRIMARY KEY (id_phone_number)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE user_t
+    ADD CONSTRAINT pk_username PRIMARY KEY (username)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE message
+    ADD CONSTRAINT pk_message PRIMARY KEY (id_message)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE conversation
+    ADD CONSTRAINT pk_conversation PRIMARY KEY (id_conversation)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE type_user
+    ADD CONSTRAINT pk_type_user PRIMARY KEY (id_type_user)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+      
+ALTER TABLE province
+    ADD CONSTRAINT pk_province PRIMARY KEY (id_province)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE canton
+    ADD CONSTRAINT pk_canton PRIMARY KEY (id_canton)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE district
+    ADD CONSTRAINT pk_district PRIMARY KEY (id_district)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);  
+
+ALTER TABLE country
+    ADD CONSTRAINT pk_country PRIMARY KEY (id_country)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0); 
+
+                  
+ALTER TABLE purchase_history
+    ADD CONSTRAINT pk_purchase_history PRIMARY KEY (id_purchase_history)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE review
+    ADD CONSTRAINT pk_review PRIMARY KEY (id_review)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+             
+ALTER TABLE purchase
+    ADD CONSTRAINT pk_purchase PRIMARY KEY (id_purchase)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+CREATE TABLE payment_method(
+    id_payment_method       NUMBER(30),
+    description             VARCHAR2(25) CONSTRAINT pmethod_date_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT pmethod_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT pmethod_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+                        
+ALTER TABLE calification
+    ADD CONSTRAINT pk_calification PRIMARY KEY (id_calification)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+    
+ALTER TABLE shopping_car
+    ADD CONSTRAINT pk_shopping_car PRIMARY KEY (id_shopping_car)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE wish_list
+    ADD CONSTRAINT pk_wish_list PRIMARY KEY (id_wish_list)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE style
+    ADD CONSTRAINT pk_style PRIMARY KEY (id_style )
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+            
+ALTER TABLE type_shipping
+    ADD CONSTRAINT pk_type_shipping PRIMARY KEY (id_shipping)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE watch
+    ADD CONSTRAINT pk_watch PRIMARY KEY (id_watch)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+    
+ALTER TABLE condition
+    ADD CONSTRAINT pk_condition PRIMARY KEY (id_condition)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE brand
+    ADD CONSTRAINT pk_brand PRIMARY KEY (id_brand)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE model
+    ADD CONSTRAINT pk_model PRIMARY KEY (id_model)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE product_photo
+    ADD CONSTRAINT pk_product_photo PRIMARY KEY (id_watch_photo)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE category
+    ADD CONSTRAINT pk_category PRIMARY KEY (id_category)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE binnacle_price
+    ADD CONSTRAINT pk_binnacle_price PRIMARY KEY (id_binnacle)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE previous_price
+    ADD CONSTRAINT pk_previous_price PRIMARY KEY (id_previous)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+------------------------------------------------------------------------------------------------------
+--SCHEMA PAR
+------------------------------------------------------------------------------------------------------                     
+ALTER TABLE parameters_t
+    ADD CONSTRAINT pk_parameters PRIMARY KEY (name)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);      
+
+GRANT INSERT, DELETE, UPDATE, SELECT ON par.parameters_t TO usu;      
+------------------------------------------------------------------------------------------------------
+--Relations NXN
+------------------------------------------------------------------------------------------------------
+ALTER TABLE watchxwish_list
+    ADD CONSTRAINT pk_place_watchxwish PRIMARY KEY (id_watch, id_wish_list)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE watchxtype_shipping
+    ADD CONSTRAINT pk_place_watcxtypesh PRIMARY KEY (id_watch, id_shipping)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE userxwatch
+    ADD CONSTRAINT pk_place_userxwatc PRIMARY KEY (id_watch, username)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE watchxshopping_car
+    ADD CONSTRAINT pk_watxshocar PRIMARY KEY (id_watch, id_shopping_car)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE userxcalification
+    ADD CONSTRAINT pk_userxcalifi PRIMARY KEY (username, id_calification)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
+
+ALTER TABLE personxnationality
+    ADD CONSTRAINT pk_personxnatio PRIMARY KEY (id_person, id_nationality)
+    USING INDEX TABLESPACE usu_index
+    PCTFREE 20
+    STORAGE (INITIAL 10K
+            NEXT 10K
+            PCTINCREASE 0);
