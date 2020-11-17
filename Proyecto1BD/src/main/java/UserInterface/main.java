@@ -20,6 +20,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import BusinessLayer.userTypes;
 
 /**
  *
@@ -27,18 +28,18 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class main extends javax.swing.JFrame {
 
+    userTypes userType=userTypes.regularUser; 
+    
     /**
      * Creates new form main
      */
     public main() {
         initComponents();
-
+        
         this.setLocationRelativeTo(null);
         this.setVisible(false);
         this.setEnabled(false);
-       
-            
-
+        
         initializeInterface();
         
     }
@@ -62,6 +63,26 @@ public class main extends javax.swing.JFrame {
         LogIn.setVisible(true);
         LogIn.setLocationRelativeTo(null);
         
+    }
+    
+    private JPanel getReturnPanel(JPanel currentPanel){
+            if(userType==userTypes.adminUser){
+                if(currentPanel==Market){
+                    return AdminMenu_Panel_Main;
+                }
+                if(currentPanel==MyProfile){
+                    return AdminAdministration_Panel_Main;
+                } 
+            }
+            if(userType==userTypes.regularUser){
+                if(currentPanel == Market){
+                    return UserMenu_Panel_Main;
+                }  
+                if(currentPanel==MyProfile){
+                    return UserMenu_Panel_Main;
+                } 
+            }
+            return null;
     }
    
     private void openFrameCloseFrame(JFrame openFrame, JFrame closeFrame){
@@ -210,7 +231,7 @@ public class main extends javax.swing.JFrame {
         Registry_Panel_Header1 = new javax.swing.JPanel();
         Registry_Logo2 = new javax.swing.JLabel();
         Registry_Label_Tittle2 = new javax.swing.JLabel();
-        Registry_Button_Back = new javax.swing.JButton();
+        Registry_Button_Accept = new javax.swing.JButton();
         Registry_Label_Price = new javax.swing.JLabel();
         Registry_FormattedTextField_Manufacturedate = new javax.swing.JFormattedTextField();
         Registry_Label_Brand = new javax.swing.JLabel();
@@ -220,18 +241,20 @@ public class main extends javax.swing.JFrame {
         Registry_Label_Name = new javax.swing.JLabel();
         Registry_ComboBox_Model = new javax.swing.JComboBox<>();
         Registry_Label_Category = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        SignUp_Label_Name5 = new javax.swing.JLabel();
-        SignUp_Label_Name6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        SignUp_Label_Name7 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        Registry_ComboBox_Category = new javax.swing.JComboBox<>();
+        Registry_Label_Model = new javax.swing.JLabel();
+        Registry_Label_Description = new javax.swing.JLabel();
+        Registry_ComboBo_Style = new javax.swing.JComboBox<>();
+        Registry_Label_ShippingType = new javax.swing.JLabel();
+        Registry_ComboBox_Condition = new javax.swing.JComboBox<>();
+        Registry_ComboBox_Brand = new javax.swing.JComboBox<>();
         Registry_Label_Style = new javax.swing.JLabel();
         Registry_ScrollPane_Description = new javax.swing.JScrollPane();
         Registry_TextArea_Description = new javax.swing.JTextArea();
         SignUp_Label_Name8 = new javax.swing.JLabel();
         Registry_Button_Shipping = new javax.swing.JButton();
+        panel_space = new javax.swing.JPanel();
+        Registry_Button_cancel = new javax.swing.JButton();
         AdminMenu_Panel_Main = new javax.swing.JPanel();
         AdminMenu_Panel_Header = new javax.swing.JPanel();
         AdminMenu_Logo = new javax.swing.JLabel();
@@ -262,9 +285,9 @@ public class main extends javax.swing.JFrame {
         Market_Panel_Header1 = new javax.swing.JPanel();
         UserMenu_Logo2 = new javax.swing.JLabel();
         UserMenu_Label_Tittle2 = new javax.swing.JLabel();
-        UserMenu_Button_Profile1 = new javax.swing.JButton();
-        UserMenu_Button_Market1 = new javax.swing.JButton();
-        UserMenu_Button_LogOut1 = new javax.swing.JButton();
+        Market_Button_ForSale = new javax.swing.JButton();
+        Market_Button_Registry = new javax.swing.JButton();
+        Market_Button_Return = new javax.swing.JButton();
         AdminClocks = new javax.swing.JPanel();
         Registry_Panel_Header2 = new javax.swing.JPanel();
         Registry_Logo3 = new javax.swing.JLabel();
@@ -357,11 +380,12 @@ public class main extends javax.swing.JFrame {
         AdminUsers_FormattedTextField_BirthDate2 = new javax.swing.JFormattedTextField();
         AdminUsers_FormattedTextField_Email3 = new javax.swing.JFormattedTextField();
         AdminUsers_Button_Previous1 = new javax.swing.JButton();
-        AdminUsers_Button_PurcharseHistory = new javax.swing.JButton();
+        AdminUsers_Button_RegisteredClocks = new javax.swing.JButton();
         AdminUsers_Label_Address3 = new javax.swing.JLabel();
         AdminUsers_ComboBox_IDType1 = new javax.swing.JComboBox<>();
         AdminUsers_FormattedTextField_Number3 = new javax.swing.JFormattedTextField();
         AdminUsers_TextField_FirstName3 = new javax.swing.JTextField();
+        AdminUsers_Button_PurcharseHistory1 = new javax.swing.JButton();
         MyRegisteredClocks = new javax.swing.JPanel();
         MyRegisteredClocks_Header3 = new javax.swing.JPanel();
         MyRegisteredClocks_Logo4 = new javax.swing.JLabel();
@@ -393,6 +417,7 @@ public class main extends javax.swing.JFrame {
         MyRegisteredClocks_Button_Previous = new javax.swing.JButton();
 
         confirmExit.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        confirmExit.setAlwaysOnTop(true);
         confirmExit.setMinimumSize(new java.awt.Dimension(400, 207));
 
         cofirmExit_label_tittle.setFont(new java.awt.Font("Kozuka Mincho Pro L", 0, 24)); // NOI18N
@@ -604,6 +629,7 @@ public class main extends javax.swing.JFrame {
 
         Address.setDefaultCloseOperation(closeProgram());
         Address.setTitle("Address");
+        Address.setAlwaysOnTop(true);
         Address.setAutoRequestFocus(false);
         Address.setBackground(new java.awt.Color(255, 180, 162));
         Address.setMaximumSize(new java.awt.Dimension(608, 420));
@@ -1167,18 +1193,23 @@ public class main extends javax.swing.JFrame {
 
         Registry.add(Registry_Panel_Header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 100));
 
-        Registry_Button_Back.setBackground(new java.awt.Color(255, 255, 255));
-        Registry_Button_Back.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
-        Registry_Button_Back.setText("Return");
-        Registry_Button_Back.setAlignmentY(0.0F);
-        Registry_Button_Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Registry_Button_Back.setFocusCycleRoot(true);
-        Registry_Button_Back.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Registry_Button_Back.setIconTextGap(0);
-        Registry_Button_Back.setMaximumSize(new java.awt.Dimension(106, 30));
-        Registry_Button_Back.setMinimumSize(new java.awt.Dimension(106, 30));
-        Registry_Button_Back.setPreferredSize(new java.awt.Dimension(106, 30));
-        Registry.add(Registry_Button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, -1, -1));
+        Registry_Button_Accept.setBackground(new java.awt.Color(255, 255, 255));
+        Registry_Button_Accept.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
+        Registry_Button_Accept.setText("Accept");
+        Registry_Button_Accept.setAlignmentY(0.0F);
+        Registry_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_Accept.setFocusCycleRoot(true);
+        Registry_Button_Accept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Registry_Button_Accept.setIconTextGap(0);
+        Registry_Button_Accept.setMaximumSize(new java.awt.Dimension(106, 30));
+        Registry_Button_Accept.setMinimumSize(new java.awt.Dimension(106, 30));
+        Registry_Button_Accept.setPreferredSize(new java.awt.Dimension(106, 30));
+        Registry_Button_Accept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Registry_Button_AcceptActionPerformed(evt);
+            }
+        });
+        Registry.add(Registry_Button_Accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, -1));
 
         Registry_Label_Price.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
         Registry_Label_Price.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1237,58 +1268,58 @@ public class main extends javax.swing.JFrame {
         Registry_Label_Category.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Registry.add(Registry_Label_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 120, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        Registry_ComboBox_Category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Registry_ComboBox_Category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                Registry_ComboBox_CategoryActionPerformed(evt);
             }
         });
-        Registry.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 210, 30));
+        Registry.add(Registry_ComboBox_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 210, 30));
 
-        SignUp_Label_Name5.setBackground(new java.awt.Color(0, 0, 0));
-        SignUp_Label_Name5.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
-        SignUp_Label_Name5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SignUp_Label_Name5.setText("Model:");
-        SignUp_Label_Name5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Registry.add(SignUp_Label_Name5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 80, 30));
+        Registry_Label_Model.setBackground(new java.awt.Color(0, 0, 0));
+        Registry_Label_Model.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
+        Registry_Label_Model.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Registry_Label_Model.setText("Model:");
+        Registry_Label_Model.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Registry.add(Registry_Label_Model, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 80, 30));
 
-        SignUp_Label_Name6.setBackground(new java.awt.Color(0, 0, 0));
-        SignUp_Label_Name6.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
-        SignUp_Label_Name6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SignUp_Label_Name6.setText("Description:");
-        SignUp_Label_Name6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Registry.add(SignUp_Label_Name6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 130, 30));
+        Registry_Label_Description.setBackground(new java.awt.Color(0, 0, 0));
+        Registry_Label_Description.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
+        Registry_Label_Description.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Registry_Label_Description.setText("Description:");
+        Registry_Label_Description.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Registry.add(Registry_Label_Description, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 130, 30));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        Registry_ComboBo_Style.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Registry_ComboBo_Style.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                Registry_ComboBo_StyleActionPerformed(evt);
             }
         });
-        Registry.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 260, 30));
+        Registry.add(Registry_ComboBo_Style, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 260, 30));
 
-        SignUp_Label_Name7.setBackground(new java.awt.Color(0, 0, 0));
-        SignUp_Label_Name7.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
-        SignUp_Label_Name7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SignUp_Label_Name7.setText("Shipping type: ");
-        SignUp_Label_Name7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Registry.add(SignUp_Label_Name7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, 30));
+        Registry_Label_ShippingType.setBackground(new java.awt.Color(0, 0, 0));
+        Registry_Label_ShippingType.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
+        Registry_Label_ShippingType.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Registry_Label_ShippingType.setText("Shipping type: ");
+        Registry_Label_ShippingType.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Registry.add(Registry_Label_ShippingType, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, 30));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        Registry_ComboBox_Condition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Registry_ComboBox_Condition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                Registry_ComboBox_ConditionActionPerformed(evt);
             }
         });
-        Registry.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 210, 30));
+        Registry.add(Registry_ComboBox_Condition, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 210, 30));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+        Registry_ComboBox_Brand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Registry_ComboBox_Brand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox5ActionPerformed(evt);
+                Registry_ComboBox_BrandActionPerformed(evt);
             }
         });
-        Registry.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 250, 30));
+        Registry.add(Registry_ComboBox_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 250, 30));
 
         Registry_Label_Style.setBackground(new java.awt.Color(0, 0, 0));
         Registry_Label_Style.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 24)); // NOI18N
@@ -1313,7 +1344,40 @@ public class main extends javax.swing.JFrame {
         Registry_Button_Shipping.setText("Shipping");
         Registry.add(Registry_Button_Shipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 170, 30));
 
-        LayerPn.add(Registry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, -1));
+        panel_space.setBackground(new java.awt.Color(255, 180, 162));
+
+        javax.swing.GroupLayout panel_spaceLayout = new javax.swing.GroupLayout(panel_space);
+        panel_space.setLayout(panel_spaceLayout);
+        panel_spaceLayout.setHorizontalGroup(
+            panel_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 860, Short.MAX_VALUE)
+        );
+        panel_spaceLayout.setVerticalGroup(
+            panel_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+
+        Registry.add(panel_space, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 860, 60));
+
+        Registry_Button_cancel.setBackground(new java.awt.Color(255, 255, 255));
+        Registry_Button_cancel.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
+        Registry_Button_cancel.setText("Return");
+        Registry_Button_cancel.setAlignmentY(0.0F);
+        Registry_Button_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_cancel.setFocusCycleRoot(true);
+        Registry_Button_cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Registry_Button_cancel.setIconTextGap(0);
+        Registry_Button_cancel.setMaximumSize(new java.awt.Dimension(106, 30));
+        Registry_Button_cancel.setMinimumSize(new java.awt.Dimension(106, 30));
+        Registry_Button_cancel.setPreferredSize(new java.awt.Dimension(106, 30));
+        Registry_Button_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Registry_Button_cancelActionPerformed(evt);
+            }
+        });
+        Registry.add(Registry_Button_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 420, -1, -1));
+
+        LayerPn.add(Registry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         AdminMenu_Panel_Main.setBackground(new java.awt.Color(255, 180, 162));
         AdminMenu_Panel_Main.setAlignmentX(0.0F);
@@ -1356,7 +1420,7 @@ public class main extends javax.swing.JFrame {
         AdminMenu_Button_Adminstration.setBackground(new java.awt.Color(145, 118, 129));
         AdminMenu_Button_Adminstration.setFont(new java.awt.Font("Kozuka Gothic Pro L", 2, 18)); // NOI18N
         AdminMenu_Button_Adminstration.setForeground(new java.awt.Color(255, 255, 255));
-        AdminMenu_Button_Adminstration.setIcon(getImageIcon("Profile.jpg")
+        AdminMenu_Button_Adminstration.setIcon(getImageIcon("Administration.jpg")
         );
         AdminMenu_Button_Adminstration.setText("ADMINISTRATION");
         AdminMenu_Button_Adminstration.setBorderPainted(false);
@@ -1364,6 +1428,11 @@ public class main extends javax.swing.JFrame {
         AdminMenu_Button_Adminstration.setMaximumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Adminstration.setMinimumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Adminstration.setPreferredSize(new java.awt.Dimension(259, 320));
+        AdminMenu_Button_Adminstration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminMenu_Button_AdminstrationActionPerformed(evt);
+            }
+        });
 
         AdminMenu_Button_Market.setBackground(new java.awt.Color(145, 118, 129));
         AdminMenu_Button_Market.setFont(new java.awt.Font("Kozuka Gothic Pro L", 2, 18)); // NOI18N
@@ -1440,20 +1509,19 @@ public class main extends javax.swing.JFrame {
             AdminMenu_Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(AdminMenu_Panel_Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminMenu_Panel_MainLayout.createSequentialGroup()
-                .addGroup(AdminMenu_Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AdminMenu_Panel_MainLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AdminMenu_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(AdminMenu_Button_Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AdminMenu_Panel_MainLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(AdminMenu_Button_Market, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(AdminMenu_Button_Messages, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AdminMenu_Button_Adminstration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AdminMenu_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(AdminMenu_Button_Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminMenu_Panel_MainLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(AdminMenu_Button_Market, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(AdminMenu_Button_Messages, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AdminMenu_Button_Adminstration, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         AdminMenu_Panel_MainLayout.setVerticalGroup(
             AdminMenu_Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1521,6 +1589,11 @@ public class main extends javax.swing.JFrame {
         UserMenu_Button_Profile.setMaximumSize(new java.awt.Dimension(259, 320));
         UserMenu_Button_Profile.setMinimumSize(new java.awt.Dimension(259, 320));
         UserMenu_Button_Profile.setPreferredSize(new java.awt.Dimension(259, 320));
+        UserMenu_Button_Profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserMenu_Button_ProfileActionPerformed(evt);
+            }
+        });
 
         UserMenu_Button_Market.setBackground(new java.awt.Color(145, 118, 129));
         UserMenu_Button_Market.setFont(new java.awt.Font("Kozuka Gothic Pro L", 2, 18)); // NOI18N
@@ -1583,6 +1656,11 @@ public class main extends javax.swing.JFrame {
         UserMenu_Button_LogOut.setMaximumSize(new java.awt.Dimension(106, 30));
         UserMenu_Button_LogOut.setMinimumSize(new java.awt.Dimension(106, 30));
         UserMenu_Button_LogOut.setPreferredSize(new java.awt.Dimension(106, 30));
+        UserMenu_Button_LogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserMenu_Button_LogOutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout UserMenu_Panel_MainLayout = new javax.swing.GroupLayout(UserMenu_Panel_Main);
         UserMenu_Panel_Main.setLayout(UserMenu_Panel_MainLayout);
@@ -1590,20 +1668,19 @@ public class main extends javax.swing.JFrame {
             UserMenu_Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(UserMenu_Panel_Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UserMenu_Panel_MainLayout.createSequentialGroup()
-                .addGroup(UserMenu_Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(UserMenu_Panel_MainLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(UserMenu_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(UserMenu_Button_Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(UserMenu_Panel_MainLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(UserMenu_Button_Market, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(UserMenu_Button_Messages, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(UserMenu_Button_Profile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(UserMenu_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(UserMenu_Button_Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UserMenu_Panel_MainLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(UserMenu_Button_Market, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(UserMenu_Button_Messages, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(UserMenu_Button_Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         UserMenu_Panel_MainLayout.setVerticalGroup(
             UserMenu_Panel_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1661,13 +1738,18 @@ public class main extends javax.swing.JFrame {
         AdminAdministration_Button_Profile.setBackground(new java.awt.Color(109, 104, 117));
         AdminAdministration_Button_Profile.setFont(new java.awt.Font("Kozuka Gothic Pr6N L", 2, 18)); // NOI18N
         AdminAdministration_Button_Profile.setForeground(new java.awt.Color(255, 255, 255));
-        AdminAdministration_Button_Profile.setIcon(getImageIcon("Profile%20A.jpg")
+        AdminAdministration_Button_Profile.setIcon(getImageIcon("Profile A.jpg")
         );
         AdminAdministration_Button_Profile.setText("PROFILE");
         AdminAdministration_Button_Profile.setBorderPainted(false);
         AdminAdministration_Button_Profile.setMaximumSize(new java.awt.Dimension(259, 320));
         AdminAdministration_Button_Profile.setMinimumSize(new java.awt.Dimension(259, 320));
         AdminAdministration_Button_Profile.setPreferredSize(new java.awt.Dimension(259, 320));
+        AdminAdministration_Button_Profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminAdministration_Button_ProfileActionPerformed(evt);
+            }
+        });
 
         AdminAdministration_Button_Clocks.setBackground(new java.awt.Color(109, 104, 117));
         AdminAdministration_Button_Clocks.setFont(new java.awt.Font("Kozuka Gothic Pr6N L", 2, 18)); // NOI18N
@@ -1794,44 +1876,49 @@ public class main extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        UserMenu_Button_Profile1.setBackground(new java.awt.Color(145, 118, 129));
-        UserMenu_Button_Profile1.setFont(new java.awt.Font("Kozuka Mincho Pro L", 2, 18)); // NOI18N
-        UserMenu_Button_Profile1.setForeground(new java.awt.Color(255, 255, 255));
-        UserMenu_Button_Profile1.setIcon(getImageIcon("For sale.jpg")
+        Market_Button_ForSale.setBackground(new java.awt.Color(145, 118, 129));
+        Market_Button_ForSale.setFont(new java.awt.Font("Kozuka Mincho Pro L", 2, 18)); // NOI18N
+        Market_Button_ForSale.setForeground(new java.awt.Color(255, 255, 255));
+        Market_Button_ForSale.setIcon(getImageIcon("For sale.jpg")
         );
-        UserMenu_Button_Profile1.setText("FOR SALE");
-        UserMenu_Button_Profile1.setBorderPainted(false);
-        UserMenu_Button_Profile1.setMaximumSize(new java.awt.Dimension(259, 320));
-        UserMenu_Button_Profile1.setMinimumSize(new java.awt.Dimension(259, 320));
-        UserMenu_Button_Profile1.setPreferredSize(new java.awt.Dimension(259, 320));
+        Market_Button_ForSale.setText("FOR SALE");
+        Market_Button_ForSale.setBorderPainted(false);
+        Market_Button_ForSale.setMaximumSize(new java.awt.Dimension(259, 320));
+        Market_Button_ForSale.setMinimumSize(new java.awt.Dimension(259, 320));
+        Market_Button_ForSale.setPreferredSize(new java.awt.Dimension(259, 320));
 
-        UserMenu_Button_Market1.setBackground(new java.awt.Color(145, 118, 129));
-        UserMenu_Button_Market1.setFont(new java.awt.Font("Kozuka Gothic Pro L", 2, 18)); // NOI18N
-        UserMenu_Button_Market1.setForeground(new java.awt.Color(255, 255, 255));
-        UserMenu_Button_Market1.setIcon(getImageIcon("Registry.jpg")
+        Market_Button_Registry.setBackground(new java.awt.Color(145, 118, 129));
+        Market_Button_Registry.setFont(new java.awt.Font("Kozuka Gothic Pro L", 2, 18)); // NOI18N
+        Market_Button_Registry.setForeground(new java.awt.Color(255, 255, 255));
+        Market_Button_Registry.setIcon(getImageIcon("Registry.jpg")
         );
-        UserMenu_Button_Market1.setText("REGISTRY");
-        UserMenu_Button_Market1.setBorderPainted(false);
-        UserMenu_Button_Market1.setMaximumSize(new java.awt.Dimension(259, 320));
-        UserMenu_Button_Market1.setMinimumSize(new java.awt.Dimension(259, 320));
-        UserMenu_Button_Market1.setPreferredSize(new java.awt.Dimension(259, 320));
-        UserMenu_Button_Market1.addActionListener(new java.awt.event.ActionListener() {
+        Market_Button_Registry.setText("REGISTRY");
+        Market_Button_Registry.setBorderPainted(false);
+        Market_Button_Registry.setMaximumSize(new java.awt.Dimension(259, 320));
+        Market_Button_Registry.setMinimumSize(new java.awt.Dimension(259, 320));
+        Market_Button_Registry.setPreferredSize(new java.awt.Dimension(259, 320));
+        Market_Button_Registry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserMenu_Button_Market1ActionPerformed(evt);
+                Market_Button_RegistryActionPerformed(evt);
             }
         });
 
-        UserMenu_Button_LogOut1.setBackground(new java.awt.Color(255, 255, 255));
-        UserMenu_Button_LogOut1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
-        UserMenu_Button_LogOut1.setText("Return");
-        UserMenu_Button_LogOut1.setAlignmentY(0.0F);
-        UserMenu_Button_LogOut1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        UserMenu_Button_LogOut1.setFocusCycleRoot(true);
-        UserMenu_Button_LogOut1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        UserMenu_Button_LogOut1.setIconTextGap(0);
-        UserMenu_Button_LogOut1.setMaximumSize(new java.awt.Dimension(106, 30));
-        UserMenu_Button_LogOut1.setMinimumSize(new java.awt.Dimension(106, 30));
-        UserMenu_Button_LogOut1.setPreferredSize(new java.awt.Dimension(106, 30));
+        Market_Button_Return.setBackground(new java.awt.Color(255, 255, 255));
+        Market_Button_Return.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
+        Market_Button_Return.setText("Return");
+        Market_Button_Return.setAlignmentY(0.0F);
+        Market_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Market_Button_Return.setFocusCycleRoot(true);
+        Market_Button_Return.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Market_Button_Return.setIconTextGap(0);
+        Market_Button_Return.setMaximumSize(new java.awt.Dimension(106, 30));
+        Market_Button_Return.setMinimumSize(new java.awt.Dimension(106, 30));
+        Market_Button_Return.setPreferredSize(new java.awt.Dimension(106, 30));
+        Market_Button_Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Market_Button_ReturnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MarketLayout = new javax.swing.GroupLayout(Market);
         Market.setLayout(MarketLayout);
@@ -1839,14 +1926,14 @@ public class main extends javax.swing.JFrame {
             MarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Market_Panel_Header1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MarketLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(UserMenu_Button_Market1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(Market_Button_Registry, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(UserMenu_Button_Profile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+                .addComponent(Market_Button_ForSale, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MarketLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(UserMenu_Button_LogOut1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Market_Button_Return, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
         );
         MarketLayout.setVerticalGroup(
@@ -1855,10 +1942,10 @@ public class main extends javax.swing.JFrame {
                 .addComponent(Market_Panel_Header1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(MarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UserMenu_Button_Profile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UserMenu_Button_Market1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Market_Button_ForSale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Market_Button_Registry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(UserMenu_Button_LogOut1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Market_Button_Return, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
 
@@ -2078,6 +2165,11 @@ public class main extends javax.swing.JFrame {
         Registry_Button_Back3.setMaximumSize(new java.awt.Dimension(106, 30));
         Registry_Button_Back3.setMinimumSize(new java.awt.Dimension(106, 30));
         Registry_Button_Back3.setPreferredSize(new java.awt.Dimension(106, 30));
+        Registry_Button_Back3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Registry_Button_Back3ActionPerformed(evt);
+            }
+        });
         AdminClocks.add(Registry_Button_Back3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, -1, -1));
 
         Registry_Button_Back4.setBackground(new java.awt.Color(255, 255, 255));
@@ -2614,22 +2706,22 @@ public class main extends javax.swing.JFrame {
         });
         MyProfile.add(AdminUsers_Button_Previous1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 120, 40));
 
-        AdminUsers_Button_PurcharseHistory.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
-        AdminUsers_Button_PurcharseHistory.setText("Pucharse history");
-        AdminUsers_Button_PurcharseHistory.setAlignmentY(0.0F);
-        AdminUsers_Button_PurcharseHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        AdminUsers_Button_PurcharseHistory.setFocusCycleRoot(true);
-        AdminUsers_Button_PurcharseHistory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AdminUsers_Button_PurcharseHistory.setIconTextGap(0);
-        AdminUsers_Button_PurcharseHistory.setMaximumSize(new java.awt.Dimension(90, 30));
-        AdminUsers_Button_PurcharseHistory.setMinimumSize(new java.awt.Dimension(90, 30));
-        AdminUsers_Button_PurcharseHistory.setPreferredSize(new java.awt.Dimension(90, 30));
-        AdminUsers_Button_PurcharseHistory.addActionListener(new java.awt.event.ActionListener() {
+        AdminUsers_Button_RegisteredClocks.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
+        AdminUsers_Button_RegisteredClocks.setText("Registered Clocks");
+        AdminUsers_Button_RegisteredClocks.setAlignmentY(0.0F);
+        AdminUsers_Button_RegisteredClocks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_RegisteredClocks.setFocusCycleRoot(true);
+        AdminUsers_Button_RegisteredClocks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AdminUsers_Button_RegisteredClocks.setIconTextGap(0);
+        AdminUsers_Button_RegisteredClocks.setMaximumSize(new java.awt.Dimension(90, 30));
+        AdminUsers_Button_RegisteredClocks.setMinimumSize(new java.awt.Dimension(90, 30));
+        AdminUsers_Button_RegisteredClocks.setPreferredSize(new java.awt.Dimension(90, 30));
+        AdminUsers_Button_RegisteredClocks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdminUsers_Button_PurcharseHistoryActionPerformed(evt);
+                AdminUsers_Button_RegisteredClocksActionPerformed(evt);
             }
         });
-        MyProfile.add(AdminUsers_Button_PurcharseHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 180, 40));
+        MyProfile.add(AdminUsers_Button_RegisteredClocks, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 200, 40));
 
         AdminUsers_Label_Address3.setFont(new java.awt.Font("Kozuka Mincho Pr6N L", 0, 18)); // NOI18N
         AdminUsers_Label_Address3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -2650,6 +2742,23 @@ public class main extends javax.swing.JFrame {
             }
         });
         MyProfile.add(AdminUsers_TextField_FirstName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 240, 30));
+
+        AdminUsers_Button_PurcharseHistory1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
+        AdminUsers_Button_PurcharseHistory1.setText("Pucharse history");
+        AdminUsers_Button_PurcharseHistory1.setAlignmentY(0.0F);
+        AdminUsers_Button_PurcharseHistory1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_PurcharseHistory1.setFocusCycleRoot(true);
+        AdminUsers_Button_PurcharseHistory1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AdminUsers_Button_PurcharseHistory1.setIconTextGap(0);
+        AdminUsers_Button_PurcharseHistory1.setMaximumSize(new java.awt.Dimension(90, 30));
+        AdminUsers_Button_PurcharseHistory1.setMinimumSize(new java.awt.Dimension(90, 30));
+        AdminUsers_Button_PurcharseHistory1.setPreferredSize(new java.awt.Dimension(90, 30));
+        AdminUsers_Button_PurcharseHistory1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminUsers_Button_PurcharseHistory1ActionPerformed(evt);
+            }
+        });
+        MyProfile.add(AdminUsers_Button_PurcharseHistory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 180, 40));
 
         LayerPn.add(MyProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -2867,6 +2976,11 @@ public class main extends javax.swing.JFrame {
         MyRegisteredClocks_Button_Return.setMaximumSize(new java.awt.Dimension(106, 30));
         MyRegisteredClocks_Button_Return.setMinimumSize(new java.awt.Dimension(106, 30));
         MyRegisteredClocks_Button_Return.setPreferredSize(new java.awt.Dimension(106, 30));
+        MyRegisteredClocks_Button_Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MyRegisteredClocks_Button_ReturnActionPerformed(evt);
+            }
+        });
         MyRegisteredClocks.add(MyRegisteredClocks_Button_Return, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, -1, -1));
 
         MyRegisteredClocks_Button_Previous.setBackground(new java.awt.Color(255, 255, 255));
@@ -2924,9 +3038,9 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_LogIn_TextField_UserNameActionPerformed
 
     private void LogIn_Button_SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogIn_Button_SignUpActionPerformed
-        openFrameCloseFrame(SignUp,LogIn);
         cleanWindow(SignUp_MainPanel);
         cleanWindow(Address_MainPanel);
+        openFrameCloseFrame(SignUp,LogIn);
     }//GEN-LAST:event_LogIn_Button_SignUpActionPerformed
 
     private void LogIn_Button_AcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogIn_Button_AcceptActionPerformed
@@ -2981,12 +3095,14 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_SignUp_FormattedTextField_IDActionPerformed
 
     private void LogIn_Button_Accept1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogIn_Button_Accept1ActionPerformed
-        // TODO add your handling code here:
+        openFrameCloseFrame(mainWindow,LogIn);
+        if(userType==userTypes.adminUser)hideEveryPanelExceptThis(AdminMenu_Panel_Main);
+        else hideEveryPanelExceptThis(UserMenu_Panel_Main);
     }//GEN-LAST:event_LogIn_Button_Accept1ActionPerformed
 
     private void SignUp_Button_AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_Button_AddressActionPerformed
         openFrameCloseFrame(Address,SignUp);
-        cleanWindow(Address_MainPanel);
+        
     }//GEN-LAST:event_SignUp_Button_AddressActionPerformed
 
     private void Address_Button_AcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Address_Button_AcceptActionPerformed
@@ -3002,7 +3118,7 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_SignUp_FormattedTextField_BirthDateActionPerformed
 
     private void AdminMenu_Button_MarketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminMenu_Button_MarketActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(Market);
     }//GEN-LAST:event_AdminMenu_Button_MarketActionPerformed
 
     private void AdminMenu_Button_MessagesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminMenu_Button_MessagesActionPerformed
@@ -3010,11 +3126,11 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminMenu_Button_MessagesActionPerformed
 
     private void AdminMenu_Button_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminMenu_Button_ExitActionPerformed
-        // TODO add your handling code here:
+        closeProgram();
     }//GEN-LAST:event_AdminMenu_Button_ExitActionPerformed
 
     private void UserMenu_Button_MarketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserMenu_Button_MarketActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(Market);
     }//GEN-LAST:event_UserMenu_Button_MarketActionPerformed
 
     private void UserMenu_Button_MessagesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserMenu_Button_MessagesActionPerformed
@@ -3022,23 +3138,24 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_UserMenu_Button_MessagesActionPerformed
 
     private void UserMenu_Button_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserMenu_Button_ExitActionPerformed
-        // TODO add your handling code here:
+        closeProgram();
     }//GEN-LAST:event_UserMenu_Button_ExitActionPerformed
 
     private void AdminAdministration_Button_ClocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminAdministration_Button_ClocksActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(AdminClocks, true);
     }//GEN-LAST:event_AdminAdministration_Button_ClocksActionPerformed
 
     private void AdminAdministration_Button_UsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminAdministration_Button_UsersActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(AdminUsers, true);
     }//GEN-LAST:event_AdminAdministration_Button_UsersActionPerformed
 
     private void AdminAdministration_Button_ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminAdministration_Button_ReturnActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(AdminMenu_Panel_Main, true);
     }//GEN-LAST:event_AdminAdministration_Button_ReturnActionPerformed
 
     private void AdminMenu_Button_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminMenu_Button_LogOutActionPerformed
-        // TODO add your handling code here:
+        openFrameCloseFrame(LogIn, mainWindow);
+        cleanWindow(LogIn_MainPanel);
     }//GEN-LAST:event_AdminMenu_Button_LogOutActionPerformed
 
     private void Registry_TextField_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_TextField_NameActionPerformed
@@ -3049,25 +3166,25 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Registry_ComboBox_ModelActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void Registry_ComboBox_CategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_ComboBox_CategoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_Registry_ComboBox_CategoryActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void Registry_ComboBo_StyleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_ComboBo_StyleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_Registry_ComboBo_StyleActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void Registry_ComboBox_ConditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_ComboBox_ConditionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_Registry_ComboBox_ConditionActionPerformed
 
-    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+    private void Registry_ComboBox_BrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_ComboBox_BrandActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox5ActionPerformed
+    }//GEN-LAST:event_Registry_ComboBox_BrandActionPerformed
 
-    private void UserMenu_Button_Market1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserMenu_Button_Market1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UserMenu_Button_Market1ActionPerformed
+    private void Market_Button_RegistryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Market_Button_RegistryActionPerformed
+        hideEveryPanelExceptThis(Registry, true);
+    }//GEN-LAST:event_Market_Button_RegistryActionPerformed
 
     private void Registry_TextField_Name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_TextField_Name1ActionPerformed
         // TODO add your handling code here:
@@ -3102,7 +3219,7 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminUsers_Button_SaveChangeActionPerformed
 
     private void AdminUsers_Button_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_Button_returnActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(AdminAdministration_Panel_Main);
     }//GEN-LAST:event_AdminUsers_Button_returnActionPerformed
 
     private void AdminUsers_TextField_MiddleName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_TextField_MiddleName1ActionPerformed
@@ -3150,7 +3267,7 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminUsers_Button_SaveChange1ActionPerformed
 
     private void AdminUsers_Button_return1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_Button_return1ActionPerformed
-        // TODO add your handling code here:
+        hideEveryPanelExceptThis(getReturnPanel(MyProfile));
     }//GEN-LAST:event_AdminUsers_Button_return1ActionPerformed
 
     private void AdminUsers_TextField_MiddleName2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_TextField_MiddleName2ActionPerformed
@@ -3185,9 +3302,9 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AdminUsers_Button_Previous1ActionPerformed
 
-    private void AdminUsers_Button_PurcharseHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_Button_PurcharseHistoryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AdminUsers_Button_PurcharseHistoryActionPerformed
+    private void AdminUsers_Button_RegisteredClocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_Button_RegisteredClocksActionPerformed
+        hideEveryPanelExceptThis(MyRegisteredClocks);
+    }//GEN-LAST:event_AdminUsers_Button_RegisteredClocksActionPerformed
 
     private void AdminUsers_TextField_FirstName3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_TextField_FirstName3ActionPerformed
         // TODO add your handling code here:
@@ -3216,6 +3333,47 @@ public class main extends javax.swing.JFrame {
     private void MyRegisteredClocks_ComboBox_BrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyRegisteredClocks_ComboBox_BrandActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MyRegisteredClocks_ComboBox_BrandActionPerformed
+
+    private void Registry_Button_AcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_Button_AcceptActionPerformed
+        hideEveryPanelExceptThis(Market);
+    }//GEN-LAST:event_Registry_Button_AcceptActionPerformed
+
+    private void Registry_Button_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_Button_cancelActionPerformed
+        hideEveryPanelExceptThis(Market);
+    }//GEN-LAST:event_Registry_Button_cancelActionPerformed
+
+    private void AdminMenu_Button_AdminstrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminMenu_Button_AdminstrationActionPerformed
+        hideEveryPanelExceptThis(AdminAdministration_Panel_Main,true);
+    }//GEN-LAST:event_AdminMenu_Button_AdminstrationActionPerformed
+
+    private void AdminAdministration_Button_ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminAdministration_Button_ProfileActionPerformed
+        hideEveryPanelExceptThis(MyProfile, true);
+    }//GEN-LAST:event_AdminAdministration_Button_ProfileActionPerformed
+
+    private void UserMenu_Button_LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserMenu_Button_LogOutActionPerformed
+        openFrameCloseFrame(LogIn, mainWindow);
+        cleanWindow(LogIn_MainPanel);
+    }//GEN-LAST:event_UserMenu_Button_LogOutActionPerformed
+
+    private void UserMenu_Button_ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserMenu_Button_ProfileActionPerformed
+        hideEveryPanelExceptThis(MyProfile, true);
+    }//GEN-LAST:event_UserMenu_Button_ProfileActionPerformed
+
+    private void Market_Button_ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Market_Button_ReturnActionPerformed
+        hideEveryPanelExceptThis(getReturnPanel(Market));
+    }//GEN-LAST:event_Market_Button_ReturnActionPerformed
+
+    private void Registry_Button_Back3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registry_Button_Back3ActionPerformed
+        hideEveryPanelExceptThis(AdminAdministration_Panel_Main);
+    }//GEN-LAST:event_Registry_Button_Back3ActionPerformed
+
+    private void AdminUsers_Button_PurcharseHistory1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminUsers_Button_PurcharseHistory1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AdminUsers_Button_PurcharseHistory1ActionPerformed
+
+    private void MyRegisteredClocks_Button_ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyRegisteredClocks_Button_ReturnActionPerformed
+        hideEveryPanelExceptThis(MyProfile);
+    }//GEN-LAST:event_MyRegisteredClocks_Button_ReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3294,7 +3452,8 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton AdminUsers_Button_Next;
     private javax.swing.JButton AdminUsers_Button_Previous;
     private javax.swing.JButton AdminUsers_Button_Previous1;
-    private javax.swing.JButton AdminUsers_Button_PurcharseHistory;
+    private javax.swing.JButton AdminUsers_Button_PurcharseHistory1;
+    private javax.swing.JButton AdminUsers_Button_RegisteredClocks;
     private javax.swing.JButton AdminUsers_Button_SaveChange;
     private javax.swing.JButton AdminUsers_Button_SaveChange1;
     private javax.swing.JButton AdminUsers_Button_return;
@@ -3372,6 +3531,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField LogIn_TextField_UserName;
     private javax.swing.JLabel LogIn_logo01;
     private javax.swing.JPanel Market;
+    private javax.swing.JButton Market_Button_ForSale;
+    private javax.swing.JButton Market_Button_Registry;
+    private javax.swing.JButton Market_Button_Return;
     private javax.swing.JPanel Market_Panel_Header1;
     private javax.swing.JPanel MyProfile;
     private javax.swing.JPanel MyRegisteredClocks;
@@ -3412,12 +3574,17 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField PasswordRecovery_TextField_UserName1;
     private javax.swing.JLabel PasswordRecovery_logo2;
     private javax.swing.JPanel Registry;
-    private javax.swing.JButton Registry_Button_Back;
+    private javax.swing.JButton Registry_Button_Accept;
     private javax.swing.JButton Registry_Button_Back2;
     private javax.swing.JButton Registry_Button_Back3;
     private javax.swing.JButton Registry_Button_Back4;
     private javax.swing.JButton Registry_Button_SaveChanges;
     private javax.swing.JButton Registry_Button_Shipping;
+    private javax.swing.JButton Registry_Button_cancel;
+    private javax.swing.JComboBox<String> Registry_ComboBo_Style;
+    private javax.swing.JComboBox<String> Registry_ComboBox_Brand;
+    private javax.swing.JComboBox<String> Registry_ComboBox_Category;
+    private javax.swing.JComboBox<String> Registry_ComboBox_Condition;
     private javax.swing.JComboBox<String> Registry_ComboBox_Model;
     private javax.swing.JComboBox<String> Registry_ComboBox_Model1;
     private javax.swing.JFormattedTextField Registry_FormattedTextField_Manufacturedate;
@@ -3428,12 +3595,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel Registry_Label_Brand1;
     private javax.swing.JLabel Registry_Label_Category;
     private javax.swing.JLabel Registry_Label_Category1;
+    private javax.swing.JLabel Registry_Label_Description;
     private javax.swing.JLabel Registry_Label_Manufacturedate;
     private javax.swing.JLabel Registry_Label_Manufacturedate1;
+    private javax.swing.JLabel Registry_Label_Model;
     private javax.swing.JLabel Registry_Label_Name;
     private javax.swing.JLabel Registry_Label_Name1;
     private javax.swing.JLabel Registry_Label_Price;
     private javax.swing.JLabel Registry_Label_Price1;
+    private javax.swing.JLabel Registry_Label_ShippingType;
     private javax.swing.JLabel Registry_Label_Style;
     private javax.swing.JLabel Registry_Label_Style1;
     private javax.swing.JLabel Registry_Label_Tittle2;
@@ -3472,9 +3642,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel SignUp_Label_Name10;
     private javax.swing.JLabel SignUp_Label_Name11;
     private javax.swing.JLabel SignUp_Label_Name12;
-    private javax.swing.JLabel SignUp_Label_Name5;
-    private javax.swing.JLabel SignUp_Label_Name6;
-    private javax.swing.JLabel SignUp_Label_Name7;
     private javax.swing.JLabel SignUp_Label_Name8;
     private javax.swing.JLabel SignUp_Label_Name9;
     private javax.swing.JLabel SignUp_Label_Password;
@@ -3489,12 +3656,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField SignUp_TextField_Username;
     private javax.swing.JButton UserMenu_Button_Exit;
     private javax.swing.JButton UserMenu_Button_LogOut;
-    private javax.swing.JButton UserMenu_Button_LogOut1;
     private javax.swing.JButton UserMenu_Button_Market;
-    private javax.swing.JButton UserMenu_Button_Market1;
     private javax.swing.JButton UserMenu_Button_Messages;
     private javax.swing.JButton UserMenu_Button_Profile;
-    private javax.swing.JButton UserMenu_Button_Profile1;
     private javax.swing.JLabel UserMenu_Label_Tittle1;
     private javax.swing.JLabel UserMenu_Label_Tittle2;
     private javax.swing.JLabel UserMenu_Logo1;
@@ -3506,14 +3670,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel cofirmExit_label_tittle;
     private javax.swing.JDialog confirmExit;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JFrame mainWindow;
+    private javax.swing.JPanel panel_space;
     // End of variables declaration//GEN-END:variables
 }
