@@ -1,28 +1,9 @@
-CREATE OR REPLACE PACKAGE actionsPerson IS
-PROCEDURE insertPerson (pid_person VARCHAR2, pfirst_name VARCHAR2, pmiddle_name VARCHAR2, pfirst_surname 			VARCHAR2, psecond_surname VARCHAR2, pdate_birth DATE, pdirection VARCHAR2, pemail 			VARCHAR2, pid_type NUMBER, pid_district  NUMBER, pid_photo NUMBER);
-PROCEDURE deletePerson(pid_person VARCHAR2);
-PROCEDURE updatePerson_fname(id_person VARCHAR2, pfirst_name VARCHAR2);
-PROCEDURE updatePerson_mname(id_person VARCHAR2, pmiddle_name VARCHAR2);
-PROCEDURE updatePerson_fsurname(id_person VARCHAR2, pfirst_surname VARCHAR2);
-PROCEDURE updatePerson_ssurname(id_person VARCHAR2, psecond_surname VARCHAR2);
-PROCEDURE updatePerson_datebirth(id_person VARCHAR2, pdate_birth DATE);
-PROCEDURE updatePerson_email(id_person VARCHAR2, pemail VARCHAR2);
-PROCEDURE updatePerson_direct(id_person VARCHAR2, pdirection VARCHAR2);
-PROCEDURE updatePerson_(id_person VARCHAR2, pid_type NUMBER);
-FUNCTION getPersona(id_person VARCHAR2) RETURN SYS_REFCURSOR;
-
-END actionsPerson;
-
-CREATE OR REPLACE PACKAGE BODY actionsPerson AS
-PROCEDURE insertPerson (pid_person VARCHAR2, pfirst_name VARCHAR2, pmiddle_name VARCHAR2, pfirst_surname VARCHAR2, psecond_surname VARCHAR2, pdate_birth DATE, pdirection VARCHAR2, pemail VARCHAR2, pid_type NUMBER, pid_district  NUMBER, pid_photo NUMBER) IS
-p_notFound EXCEPTION;    
-BEGIN
-        INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, 			date_birth , direction, email ,id_type, id_district, id_photo)
-        VALUES (pid_person, pfirst_name, pmiddle_name, pfirst_surname,psecond_surname, pdate_birth, 			pdirection , pemail , pid_type, pid_district , pid_photo );
+CREATE OR REPLACE PROCEDURE insertPerson (pid_person VARCHAR2, pfirst_name VARCHAR2, pmiddle_name VARCHAR2, pfirst_surname VARCHAR2, psecond_surname VARCHAR2, pdate_birth DATE, pdirection VARCHAR2, pemail VARCHAR2, pid_type NUMBER, pid_district  NUMBER, pid_photo NUMBER) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname,	date_birth , direction, email ,id_type, id_district, id_photo)
+        VALUES (pid_person, pfirst_name, pmiddle_name, pfirst_surname,psecond_surname, pdate_birth,	pdirection , pemail , pid_type, pid_district , pid_photo );
         COMMIT;
-	IF SQL%NOTFOUND THEN
-        RAISE p_notFound;
-        END IF;
         EXCEPTION
             WHEN VALUE_ERROR THEN
                 ROLLBACK;
@@ -30,14 +11,14 @@ BEGIN
             WHEN OTHERS THEN
                 ROLLBACK;
                 DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
-    END;   
+    END; 
     
-PROCEDURE deletePerson(pid_person VARCHAR2) IS
+CREATE OR REPLACE PROCEDURE deletePerson(pid_person VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
         DELETE person
         WHERE id_person = pid_person;
-	COMMIT;
+        COMMIT;
         IF SQL%NOTFOUND THEN
             RAISE p_notFound;
         END IF;
@@ -49,8 +30,8 @@ PROCEDURE deletePerson(pid_person VARCHAR2) IS
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
-
-PROCEDURE updatePerson_fname(pid_person VARCHAR2, pfirst_name VARCHAR2) IS
+    
+CREATE OR REPLACE PROCEDURE updatePerson_fname(pid_person NUMBER, pfirst_name VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -70,7 +51,7 @@ PROCEDURE updatePerson_fname(pid_person VARCHAR2, pfirst_name VARCHAR2) IS
     END;
 
 
-PROCEDURE updatePerson_mname(pid_person VARCHAR2, pmiddle_name VARCHAR2) IS
+CREATE OR REPLACE PROCEDURE updatePerson_mname(pid_person NUMBER, pmiddle_name VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -91,7 +72,7 @@ PROCEDURE updatePerson_mname(pid_person VARCHAR2, pmiddle_name VARCHAR2) IS
 
 
 
-PROCEDURE updatePerson_fsurname(pid_person VARCHAR2, pfirst_surname VARCHAR2) IS
+CREATE OR REPLACE PROCEDURE updatePerson_fsurname(pid_person NUMBER, pfirst_surname VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -110,7 +91,7 @@ PROCEDURE updatePerson_fsurname(pid_person VARCHAR2, pfirst_surname VARCHAR2) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_ssurname(pid_person VARCHAR2, psecond_surname VARCHAR2) IS
+CREATE OR REPLACE PROCEDURE updatePerson_ssurname(pid_person NUMBER, psecond_surname VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -129,7 +110,7 @@ PROCEDURE updatePerson_ssurname(pid_person VARCHAR2, psecond_surname VARCHAR2) I
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_datebirth(pid_person VARCHAR2, pdate_birth DATE) IS
+CREATE OR REPLACE PROCEDURE updatePerson_datebirth(pid_person NUMBER, pdate_birth DATE) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -148,7 +129,7 @@ PROCEDURE updatePerson_datebirth(pid_person VARCHAR2, pdate_birth DATE) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_direct(pid_person VARCHAR2, pdirection VARCHAR2) IS
+CREATE OR REPLACE PROCEDURE updatePerson_direct(pid_person NUMBER, pdirection VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -167,7 +148,7 @@ PROCEDURE updatePerson_direct(pid_person VARCHAR2, pdirection VARCHAR2) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_email(pid_person VARCHAR2, pemail VARCHAR2) IS
+CREATE OR REPLACE PROCEDURE updatePerson_email(pid_person NUMBER, pemail VARCHAR2) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -186,7 +167,7 @@ PROCEDURE updatePerson_email(pid_person VARCHAR2, pemail VARCHAR2) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_type(pid_person VARCHAR2, pid_type NUMBER) IS
+CREATE OR REPLACE PROCEDURE updatePerson_type(pid_person NUMBER, pid_type NUMBER) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -205,7 +186,7 @@ PROCEDURE updatePerson_type(pid_person VARCHAR2, pid_type NUMBER) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_(pid_person VARCHAR2, pid_district NUMBER) IS
+CREATE OR REPLACE PROCEDURE updatePerson_(pid_person NUMBER, pid_district NUMBER) IS
     p_notFound EXCEPTION;
     BEGIN
 	UPDATE person
@@ -224,10 +205,10 @@ PROCEDURE updatePerson_(pid_person VARCHAR2, pid_district NUMBER) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-PROCEDURE updatePerson_(pid_person VARCHAR2, pid_photo NUMBER) IS
+CREATE OR REPLACE PROCEDURE updatePerson_(pid_person NUMBER, pid_photo NUMBER) IS
     p_notFound EXCEPTION;
     BEGIN
-	UPDATE person
+        UPDATE person
     	SET id_photo = pid_photo
     	Where id_person = pid_person;
     	COMMIT;
@@ -243,22 +224,17 @@ PROCEDURE updatePerson_(pid_person VARCHAR2, pid_photo NUMBER) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
 	END; 
 
-FUNCTION getPersona(pid_person VARCHAR2) RETURN SYS_REFCURSOR IS
-    person_cursor SYS_REFCURSOR;
+CREATE OR REPLACE FUNCTION getPersona(pid_person NUMBER) RETURN NUMBER IS
+    vid_person NUMBER(20);
 	BEGIN
-        OPEN person_cursor FOR
-            SELECT *
+            SELECT id_person, first_name , middle_name , first_surname, second_surname 
+            INTO vid_person
             FROM person
-            WHERE id_person = NVL(pid_person, id_person);
-        RETURN person_cursor;
+            WHERE id_person = pid_person;
+            RETURN (vid_person);
     EXCEPTION
         WHEN VALUE_ERROR THEN
             DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
-            OPEN person_cursor FOR SELECT * FROM person WHERE 1 = 2;
-            RETURN person_cursor;
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
-            OPEN person_cursor FOR SELECT * FROM person WHERE 1 = 2;
-            RETURN person_cursor;
     END;
-END actionsPerson ;
