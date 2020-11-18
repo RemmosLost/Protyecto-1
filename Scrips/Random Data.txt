@@ -270,6 +270,33 @@ VALUES (s_calification.nextval, '4', USER, SYSDATE);
 INSERT INTO calification(id_calification, type ,creation_user, creation_date)
 VALUES (s_calification.nextval, '5', USER, SYSDATE);
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Category
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de bolsillo', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj digital', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj electrónico', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de arena', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj despertador', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de Pared', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de Pulsera', USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Category
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de bolsillo', USER, SYSDATE);
 
 
 -------------------------------------------------------------------------
