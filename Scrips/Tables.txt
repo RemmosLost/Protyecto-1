@@ -15,6 +15,7 @@ CREATE TABLE person(
     id_type             NUMBER(4) CONSTRAINT person_type_nn NOT NULL,
     id_district         NUMBER(5) CONSTRAINT person_iddistrict_nn NOT NULL,
     id_photo            NUMBER(5) ,
+    id_gender           NUMBER(5) CONSTRAINT person_gender_nn NOT NULL,
     --AUDIT FIELDS
     creation_date       DATE CONSTRAINT person_creationdate_nn NOT NULL,
     creation_user       VARCHAR2(25) CONSTRAINT person_creationuser_nn NOT NULL,
@@ -29,6 +30,17 @@ CREATE TABLE photo(
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT photo_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT photo_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE gender(
+    id_gender                NUMBER(10),
+    name                     VARCHAR2(25)CONSTRAINT gender_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT gender_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT gender_creationuser_nn NOT NULL,
     last_update_date        DATE,
     last_update_user        VARCHAR2(25)
 );

@@ -475,10 +475,8 @@ public class main extends javax.swing.JFrame {
         LogIn.setTitle("Log In");
         LogIn.setAutoRequestFocus(false);
         LogIn.setBackground(new java.awt.Color(255, 180, 162));
-        LogIn.setMaximumSize(new java.awt.Dimension(600, 420));
         LogIn.setMinimumSize(new java.awt.Dimension(600, 420));
         LogIn.setUndecorated(true);
-        LogIn.setPreferredSize(new java.awt.Dimension(600, 420));
 
         LogIn_MainPanel.setBackground(new java.awt.Color(109, 104, 117));
         LogIn_MainPanel.setToolTipText("");
@@ -541,13 +539,13 @@ public class main extends javax.swing.JFrame {
         LogIn_Label_Password.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         LogIn_MainPanel.add(LogIn_Label_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 266, 148, 30));
 
-        LogIn_PasswordField_Password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        LogIn_PasswordField_Password.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LogIn_MainPanel.add(LogIn_PasswordField_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 266, 260, 30));
 
         LogIn_Button_SignUp.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         LogIn_Button_SignUp.setText("Sign up ");
         LogIn_Button_SignUp.setAlignmentY(0.0F);
-        LogIn_Button_SignUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LogIn_Button_SignUp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LogIn_Button_SignUp.setFocusCycleRoot(true);
         LogIn_Button_SignUp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LogIn_Button_SignUp.setIconTextGap(0);
@@ -566,7 +564,7 @@ public class main extends javax.swing.JFrame {
         LogIn_Button_Accept.setForeground(new java.awt.Color(204, 0, 0));
         LogIn_Button_Accept.setText("Exit");
         LogIn_Button_Accept.setAlignmentY(0.0F);
-        LogIn_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LogIn_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LogIn_Button_Accept.setFocusCycleRoot(true);
         LogIn_Button_Accept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LogIn_Button_Accept.setIconTextGap(0);
@@ -582,7 +580,7 @@ public class main extends javax.swing.JFrame {
 
         LogIn_Button_PasswordRecovery.setBorderPainted(false);
         LogIn_Button_PasswordRecovery.setContentAreaFilled(false);
-        LogIn_Button_PasswordRecovery.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LogIn_Button_PasswordRecovery.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LogIn_Button_PasswordRecovery.setFocusPainted(false);
         LogIn_Button_PasswordRecovery.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -602,7 +600,7 @@ public class main extends javax.swing.JFrame {
         LogIn_Button_Accept1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         LogIn_Button_Accept1.setText("Accept");
         LogIn_Button_Accept1.setAlignmentY(0.0F);
-        LogIn_Button_Accept1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LogIn_Button_Accept1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LogIn_Button_Accept1.setFocusCycleRoot(true);
         LogIn_Button_Accept1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LogIn_Button_Accept1.setIconTextGap(0);
@@ -632,10 +630,8 @@ public class main extends javax.swing.JFrame {
         Address.setAlwaysOnTop(true);
         Address.setAutoRequestFocus(false);
         Address.setBackground(new java.awt.Color(255, 180, 162));
-        Address.setMaximumSize(new java.awt.Dimension(608, 420));
         Address.setMinimumSize(new java.awt.Dimension(608, 420));
         Address.setUndecorated(true);
-        Address.setPreferredSize(new java.awt.Dimension(608, 420));
 
         Address_MainPanel.setBackground(new java.awt.Color(109, 104, 117));
         Address_MainPanel.setToolTipText("");
@@ -737,7 +733,7 @@ public class main extends javax.swing.JFrame {
         Address_Button_Accept.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Address_Button_Accept.setText("Accept");
         Address_Button_Accept.setAlignmentY(0.0F);
-        Address_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Address_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Address_Button_Accept.setFocusCycleRoot(true);
         Address_Button_Accept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Address_Button_Accept.setIconTextGap(0);
@@ -768,7 +764,6 @@ public class main extends javax.swing.JFrame {
         SignUp.setAlwaysOnTop(true);
         SignUp.setAutoRequestFocus(false);
         SignUp.setBackground(new java.awt.Color(255, 180, 162));
-        SignUp.setMaximumSize(new java.awt.Dimension(676, 420));
         SignUp.setMinimumSize(new java.awt.Dimension(676, 420));
         SignUp.setUndecorated(true);
 
@@ -835,7 +830,7 @@ public class main extends javax.swing.JFrame {
         SignUp_Button_Cancel.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         SignUp_Button_Cancel.setText("Cancel");
         SignUp_Button_Cancel.setAlignmentY(0.0F);
-        SignUp_Button_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignUp_Button_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         SignUp_Button_Cancel.setFocusCycleRoot(true);
         SignUp_Button_Cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SignUp_Button_Cancel.setIconTextGap(0);
@@ -852,7 +847,7 @@ public class main extends javax.swing.JFrame {
         SignUp_Button_Accept.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         SignUp_Button_Accept.setText("Accept");
         SignUp_Button_Accept.setAlignmentY(0.0F);
-        SignUp_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignUp_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         SignUp_Button_Accept.setFocusCycleRoot(true);
         SignUp_Button_Accept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SignUp_Button_Accept.setIconTextGap(0);
@@ -1095,7 +1090,7 @@ public class main extends javax.swing.JFrame {
         PasswordRecovery_Button_Cancel.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         PasswordRecovery_Button_Cancel.setText("Cancel");
         PasswordRecovery_Button_Cancel.setAlignmentY(0.0F);
-        PasswordRecovery_Button_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PasswordRecovery_Button_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PasswordRecovery_Button_Cancel.setFocusCycleRoot(true);
         PasswordRecovery_Button_Cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         PasswordRecovery_Button_Cancel.setIconTextGap(0);
@@ -1112,7 +1107,7 @@ public class main extends javax.swing.JFrame {
         PasswordRecovery_Button_Accept.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         PasswordRecovery_Button_Accept.setText("Accept");
         PasswordRecovery_Button_Accept.setAlignmentY(0.0F);
-        PasswordRecovery_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PasswordRecovery_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PasswordRecovery_Button_Accept.setFocusCycleRoot(true);
         PasswordRecovery_Button_Accept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         PasswordRecovery_Button_Accept.setIconTextGap(0);
@@ -1140,7 +1135,6 @@ public class main extends javax.swing.JFrame {
         mainWindow.setDefaultCloseOperation(closeProgram());
         mainWindow.setTitle("Aion: Clock Market");
         mainWindow.setBackground(new java.awt.Color(255, 180, 162));
-        mainWindow.setMaximumSize(new java.awt.Dimension(860, 560));
         mainWindow.setMinimumSize(new java.awt.Dimension(860, 560));
         mainWindow.setResizable(false);
         mainWindow.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1197,7 +1191,7 @@ public class main extends javax.swing.JFrame {
         Registry_Button_Accept.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Registry_Button_Accept.setText("Accept");
         Registry_Button_Accept.setAlignmentY(0.0F);
-        Registry_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_Accept.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Registry_Button_Accept.setFocusCycleRoot(true);
         Registry_Button_Accept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Registry_Button_Accept.setIconTextGap(0);
@@ -1363,7 +1357,7 @@ public class main extends javax.swing.JFrame {
         Registry_Button_cancel.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Registry_Button_cancel.setText("Return");
         Registry_Button_cancel.setAlignmentY(0.0F);
-        Registry_Button_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Registry_Button_cancel.setFocusCycleRoot(true);
         Registry_Button_cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Registry_Button_cancel.setIconTextGap(0);
@@ -1424,7 +1418,7 @@ public class main extends javax.swing.JFrame {
         );
         AdminMenu_Button_Adminstration.setText("ADMINISTRATION");
         AdminMenu_Button_Adminstration.setBorderPainted(false);
-        AdminMenu_Button_Adminstration.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminMenu_Button_Adminstration.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminMenu_Button_Adminstration.setMaximumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Adminstration.setMinimumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Adminstration.setPreferredSize(new java.awt.Dimension(259, 320));
@@ -1441,7 +1435,7 @@ public class main extends javax.swing.JFrame {
         );
         AdminMenu_Button_Market.setText("MARKET");
         AdminMenu_Button_Market.setBorderPainted(false);
-        AdminMenu_Button_Market.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminMenu_Button_Market.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminMenu_Button_Market.setMaximumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Market.setMinimumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Market.setPreferredSize(new java.awt.Dimension(259, 320));
@@ -1458,7 +1452,7 @@ public class main extends javax.swing.JFrame {
         );
         AdminMenu_Button_Messages.setText("MESSAGES");
         AdminMenu_Button_Messages.setBorderPainted(false);
-        AdminMenu_Button_Messages.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminMenu_Button_Messages.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminMenu_Button_Messages.setMaximumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Messages.setMinimumSize(new java.awt.Dimension(259, 320));
         AdminMenu_Button_Messages.setPreferredSize(new java.awt.Dimension(259, 320));
@@ -1473,7 +1467,7 @@ public class main extends javax.swing.JFrame {
         AdminMenu_Button_Exit.setForeground(new java.awt.Color(204, 0, 0));
         AdminMenu_Button_Exit.setText("Exit");
         AdminMenu_Button_Exit.setAlignmentY(0.0F);
-        AdminMenu_Button_Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminMenu_Button_Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminMenu_Button_Exit.setFocusCycleRoot(true);
         AdminMenu_Button_Exit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminMenu_Button_Exit.setIconTextGap(0);
@@ -1490,7 +1484,7 @@ public class main extends javax.swing.JFrame {
         AdminMenu_Button_LogOut.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminMenu_Button_LogOut.setText("Log Out");
         AdminMenu_Button_LogOut.setAlignmentY(0.0F);
-        AdminMenu_Button_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminMenu_Button_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminMenu_Button_LogOut.setFocusCycleRoot(true);
         AdminMenu_Button_LogOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminMenu_Button_LogOut.setIconTextGap(0);
@@ -1632,7 +1626,7 @@ public class main extends javax.swing.JFrame {
         UserMenu_Button_Exit.setForeground(new java.awt.Color(204, 0, 0));
         UserMenu_Button_Exit.setText("Exit");
         UserMenu_Button_Exit.setAlignmentY(0.0F);
-        UserMenu_Button_Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UserMenu_Button_Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         UserMenu_Button_Exit.setFocusCycleRoot(true);
         UserMenu_Button_Exit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         UserMenu_Button_Exit.setIconTextGap(0);
@@ -1649,7 +1643,7 @@ public class main extends javax.swing.JFrame {
         UserMenu_Button_LogOut.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         UserMenu_Button_LogOut.setText("Log Out");
         UserMenu_Button_LogOut.setAlignmentY(0.0F);
-        UserMenu_Button_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UserMenu_Button_LogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         UserMenu_Button_LogOut.setFocusCycleRoot(true);
         UserMenu_Button_LogOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         UserMenu_Button_LogOut.setIconTextGap(0);
@@ -1787,7 +1781,7 @@ public class main extends javax.swing.JFrame {
         AdminAdministration_Button_Return.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminAdministration_Button_Return.setText("Return");
         AdminAdministration_Button_Return.setAlignmentY(0.0F);
-        AdminAdministration_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminAdministration_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminAdministration_Button_Return.setFocusCycleRoot(true);
         AdminAdministration_Button_Return.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminAdministration_Button_Return.setIconTextGap(0);
@@ -1907,7 +1901,7 @@ public class main extends javax.swing.JFrame {
         Market_Button_Return.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Market_Button_Return.setText("Return");
         Market_Button_Return.setAlignmentY(0.0F);
-        Market_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Market_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Market_Button_Return.setFocusCycleRoot(true);
         Market_Button_Return.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Market_Button_Return.setIconTextGap(0);
@@ -1999,7 +1993,7 @@ public class main extends javax.swing.JFrame {
         Registry_Button_SaveChanges.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Registry_Button_SaveChanges.setText("Save changes");
         Registry_Button_SaveChanges.setAlignmentY(0.0F);
-        Registry_Button_SaveChanges.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_SaveChanges.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Registry_Button_SaveChanges.setFocusCycleRoot(true);
         Registry_Button_SaveChanges.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Registry_Button_SaveChanges.setIconTextGap(0);
@@ -2145,7 +2139,7 @@ public class main extends javax.swing.JFrame {
         Registry_Button_Back2.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Registry_Button_Back2.setText("Next");
         Registry_Button_Back2.setAlignmentY(0.0F);
-        Registry_Button_Back2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_Back2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Registry_Button_Back2.setFocusCycleRoot(true);
         Registry_Button_Back2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Registry_Button_Back2.setIconTextGap(0);
@@ -2158,7 +2152,7 @@ public class main extends javax.swing.JFrame {
         Registry_Button_Back3.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Registry_Button_Back3.setText("Return");
         Registry_Button_Back3.setAlignmentY(0.0F);
-        Registry_Button_Back3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_Back3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Registry_Button_Back3.setFocusCycleRoot(true);
         Registry_Button_Back3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Registry_Button_Back3.setIconTextGap(0);
@@ -2176,7 +2170,7 @@ public class main extends javax.swing.JFrame {
         Registry_Button_Back4.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         Registry_Button_Back4.setText("Previous");
         Registry_Button_Back4.setAlignmentY(0.0F);
-        Registry_Button_Back4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Registry_Button_Back4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Registry_Button_Back4.setFocusCycleRoot(true);
         Registry_Button_Back4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Registry_Button_Back4.setIconTextGap(0);
@@ -2249,7 +2243,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_SaveChange.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_SaveChange.setText("Save changes");
         AdminUsers_Button_SaveChange.setAlignmentY(0.0F);
-        AdminUsers_Button_SaveChange.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_SaveChange.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_SaveChange.setFocusCycleRoot(true);
         AdminUsers_Button_SaveChange.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_SaveChange.setIconTextGap(0);
@@ -2266,7 +2260,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_return.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_return.setText("Return");
         AdminUsers_Button_return.setAlignmentY(0.0F);
-        AdminUsers_Button_return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_return.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_return.setFocusCycleRoot(true);
         AdminUsers_Button_return.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_return.setIconTextGap(0);
@@ -2420,7 +2414,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_Previous.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_Previous.setText("Previous");
         AdminUsers_Button_Previous.setAlignmentY(0.0F);
-        AdminUsers_Button_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_Previous.setFocusCycleRoot(true);
         AdminUsers_Button_Previous.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_Previous.setIconTextGap(0);
@@ -2437,7 +2431,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_Next.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_Next.setText("Next");
         AdminUsers_Button_Next.setAlignmentY(0.0F);
-        AdminUsers_Button_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_Next.setFocusCycleRoot(true);
         AdminUsers_Button_Next.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_Next.setIconTextGap(0);
@@ -2524,7 +2518,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_SaveChange1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_SaveChange1.setText("Save changes");
         AdminUsers_Button_SaveChange1.setAlignmentY(0.0F);
-        AdminUsers_Button_SaveChange1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_SaveChange1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_SaveChange1.setFocusCycleRoot(true);
         AdminUsers_Button_SaveChange1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_SaveChange1.setIconTextGap(0);
@@ -2541,7 +2535,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_return1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_return1.setText("Return");
         AdminUsers_Button_return1.setAlignmentY(0.0F);
-        AdminUsers_Button_return1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_return1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_return1.setFocusCycleRoot(true);
         AdminUsers_Button_return1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_return1.setIconTextGap(0);
@@ -2692,7 +2686,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_Previous1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_Previous1.setText("Wishlist");
         AdminUsers_Button_Previous1.setAlignmentY(0.0F);
-        AdminUsers_Button_Previous1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_Previous1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_Previous1.setFocusCycleRoot(true);
         AdminUsers_Button_Previous1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_Previous1.setIconTextGap(0);
@@ -2709,7 +2703,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_RegisteredClocks.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_RegisteredClocks.setText("Registered Clocks");
         AdminUsers_Button_RegisteredClocks.setAlignmentY(0.0F);
-        AdminUsers_Button_RegisteredClocks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_RegisteredClocks.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_RegisteredClocks.setFocusCycleRoot(true);
         AdminUsers_Button_RegisteredClocks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_RegisteredClocks.setIconTextGap(0);
@@ -2746,7 +2740,7 @@ public class main extends javax.swing.JFrame {
         AdminUsers_Button_PurcharseHistory1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         AdminUsers_Button_PurcharseHistory1.setText("Pucharse history");
         AdminUsers_Button_PurcharseHistory1.setAlignmentY(0.0F);
-        AdminUsers_Button_PurcharseHistory1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdminUsers_Button_PurcharseHistory1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AdminUsers_Button_PurcharseHistory1.setFocusCycleRoot(true);
         AdminUsers_Button_PurcharseHistory1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AdminUsers_Button_PurcharseHistory1.setIconTextGap(0);
@@ -2810,7 +2804,7 @@ public class main extends javax.swing.JFrame {
         MyRegisteredClocks_Button_SaveChanges1.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         MyRegisteredClocks_Button_SaveChanges1.setText("Save changes");
         MyRegisteredClocks_Button_SaveChanges1.setAlignmentY(0.0F);
-        MyRegisteredClocks_Button_SaveChanges1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MyRegisteredClocks_Button_SaveChanges1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MyRegisteredClocks_Button_SaveChanges1.setFocusCycleRoot(true);
         MyRegisteredClocks_Button_SaveChanges1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         MyRegisteredClocks_Button_SaveChanges1.setIconTextGap(0);
@@ -2956,7 +2950,7 @@ public class main extends javax.swing.JFrame {
         MyRegisteredClocks_Button_Next.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         MyRegisteredClocks_Button_Next.setText("Next");
         MyRegisteredClocks_Button_Next.setAlignmentY(0.0F);
-        MyRegisteredClocks_Button_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MyRegisteredClocks_Button_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MyRegisteredClocks_Button_Next.setFocusCycleRoot(true);
         MyRegisteredClocks_Button_Next.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         MyRegisteredClocks_Button_Next.setIconTextGap(0);
@@ -2969,7 +2963,7 @@ public class main extends javax.swing.JFrame {
         MyRegisteredClocks_Button_Return.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         MyRegisteredClocks_Button_Return.setText("Return");
         MyRegisteredClocks_Button_Return.setAlignmentY(0.0F);
-        MyRegisteredClocks_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MyRegisteredClocks_Button_Return.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MyRegisteredClocks_Button_Return.setFocusCycleRoot(true);
         MyRegisteredClocks_Button_Return.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         MyRegisteredClocks_Button_Return.setIconTextGap(0);
@@ -2987,7 +2981,7 @@ public class main extends javax.swing.JFrame {
         MyRegisteredClocks_Button_Previous.setFont(new java.awt.Font("Lucida Sans Unicode", 2, 18)); // NOI18N
         MyRegisteredClocks_Button_Previous.setText("Previous");
         MyRegisteredClocks_Button_Previous.setAlignmentY(0.0F);
-        MyRegisteredClocks_Button_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MyRegisteredClocks_Button_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MyRegisteredClocks_Button_Previous.setFocusCycleRoot(true);
         MyRegisteredClocks_Button_Previous.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         MyRegisteredClocks_Button_Previous.setIconTextGap(0);
