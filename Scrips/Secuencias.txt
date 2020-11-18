@@ -17,6 +17,16 @@ MAXVALUE            10000000
 NOCACHE
 NOCYCLE;
 
+--TABLE payment_method
+CREATE SEQUENCE s_payment_method
+START WITH          0
+INCREMENT BY        1
+MINVALUE            0
+MAXVALUE            10
+NOCACHE
+NOCYCLE;
+
+
 --TABLE country
 CREATE SEQUENCE s_country
 START WITH          23

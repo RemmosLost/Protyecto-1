@@ -239,6 +239,19 @@ VALUES (S_ID_TYPE.nextval, 'Mujer', USER, SYSDATE);
 INSERT INTO gender(id_gender, name ,creation_user, creation_date)
 VALUES (S_ID_TYPE.nextval, 'Otros', USER, SYSDATE);
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Payment_method
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Tarjeta de Crédito', USER, SYSDATE);
+
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Tarjeta de Débito', USER, SYSDATE);
+
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Efectivo', USER, SYSDATE);
+
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Cheque', USER, SYSDATE);
 
 -------------------------------------------------------------------------
 --PAR
