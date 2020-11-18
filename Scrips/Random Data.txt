@@ -1,43 +1,200 @@
 --Person
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('125385779', 'Amelia', 'Daniel', 'Soto','Quiros', DATE'1955-05-02', '500 mts del palo de mango del restaurante Doña Juana, casa café' , 'amely02@gmail.com' , 1, 250, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('500235779', 'Ricardo', 'Sergio', 'Vargas','Blanco', DATE'1950-12-16', 'Detras de los departamentos El Roble, primera casa amarilla' , 'sergio16@gmail.com' , 1, 366, USER, SYSDATE, 1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('257985779', 'Carlos', 'Antonio', 'Lizano','Vargas', DATE'1989-05-26', '100 mts del anfiteatro de Manue, casa 15C' , 'carantol@gmail.com' , 1, 322, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('500235009', 'Berta', 'Daniela', 'Mora','Marín', DATE'1990-07-03', '100mts del cafetal de Marcos, la casa que sigue de color verde' , 'bertia90@gmail.com' , 1, 380, USER, SYSDATE, 2);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('102568993', 'María', 'Antonia', 'Castillo','Logos', DATE'1930-10-10', 'De la última parada de San Isidro 300mts al Norte, casa celeste' , 'mariantonienta@gmail.com' , 1, 319, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('k12345678', 'Carón', 'Elizabeth', 'Sample','Marín', DATE'1966-11-01', 'Del SuperHereia 50mts al Sur, casa con dos arbustos' , 'sample6601@gmail.com' , 2,289, USER, SYSDATE,2);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('500235779', 'Ricardo', 'Sergio', 'Vargas','Blanco', DATE'1950-12-16', 'Detras de los departamentos El Roble, primera casa amarilla' , 'sergio16@gmail.com' , 1, 366, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('117310571', 'Rebeca', 'María', 'Madrigal','Arguedas', DATE'1999-01-07', 'Del antigua Ñangazo 75mts al Norte, la casa 9B' , 'rmma070199@gmail.com' , 1, 107, USER, SYSDATE, 2);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('500235009', 'Berta', 'Daniela', 'Mora','Marín', DATE'1990-07-03', '100mts del cafetal de Marcos, la casa que sigue de color verde' , 'bertia90@gmail.com' , 1, 380, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('117378971', 'María', NULL, 'Melano','Cierra', DATE'1980-11-30', 'Del árbol de poro 400mts al Este, casa con cochera gris' , 'melano19@gmail.com' , 1,285, USER, SYSDATE, 1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('k12345678', 'Carón', 'Elizabeth', 'Sample','Marín', DATE'1966-11-01', 'Del SuperHereia 50mts al Sur, casa con dos arbustos' , 'sample6601@gmail.com' , 2,289, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('113730331', 'Unberto', 'Berto', 'Barbosa','Bermudes', DATE'1954-06-06', 'Del las Bodegas 200mts al Noreste y 50mst al Sur, casa marrón' , 'bbbb664@gmail.com' , 1, 216, USER, SYSDATE,1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('117310571', 'Rebeca', 'María', 'Madrigal','Arguedas', DATE'1999-01-07', 'Del antigua Ñangazo 75mts al Norte, la casa 9B' , 'rmma070199@gmail.com' , 1, 107, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('718880331', 'Calvin', 'Carlo', 'Castro','Castillo', DATE'1973-02-14', 'De la soda Upalita, 300mts al Norte, en el palo de manzanas de agua' , 'calvin1973@gmail.com' , 1, 223, USER, SYSDATE, 1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('117378971', 'María', NULL, 'Melano','Cierra', DATE'1980-11-30', 'Del árbol de poro 400mts al Este, casa con cochera gris' , 'melano19@gmail.com' , 1,285, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('313731105', 'Enzo', 'Lucrecio', 'Suárez','Zeledón', DATE'1961-12-22', 'A la vuela de la ferreteria El Pepe, casa con portón negro' , 'lucre22@gmail.com' , 1, 316, USER, SYSDATE,1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('113730331', 'Unberto', 'Berto', 'Barbosa','Bermudes', DATE'1954-06-06', 'Del las Bodegas 200mts al Noreste y 50mst al Sur, casa marrón' , 'bbbb664@gmail.com' , 1, 216, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('113734571', 'Josep', 'Thiago', 'Jurado','Juez', DATE'1989-12-31', 'La casa de la izquierda de la veterinaria de Tures' , 'juez31@gmail.com' , 1, 306, USER, SYSDATE, 1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('718880331', 'Calvin', 'Carlo', 'Castro','Castillo', DATE'1973-02-14', 'De la soda Upalita, 300mts al Norte, en el palo de manzanas de agua' , 'calvin1973@gmail.com' , 1, 223, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('113236231', 'Laura', 'Lucrecia', 'Pedrero','Pedrasco', DATE'1996-07-07', 'Del chino de la última parada de San Rafael, 200,mts al Norte, casa con portón blanco' , 'llpiedra@gmail.com' , 1, 314, USER, SYSDATE, 2);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('313731105', 'Enzo', 'Lucrecio', 'Suárez','Zeledón', DATE'1961-12-22', 'A la vuela de la ferreteria El Pepe, casa con portón negro' , 'lucre22@gmail.com' , 1, 316, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('110102256911140303', 'CHAO', NULL, 'Gen',NULL, DATE'1956-10-03', '200mts al Norte del Supermercado las Perlas, casa 11A' , 'chao03@gmail.com' , 2, 216, USER, SYSDATE, 1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('113734571', 'Josep', 'Thiago', 'Jurado','Juez', DATE'1989-12-31', 'La casa de la izquierda de la veterinaria de Tures' , 'juez31@gmail.com' , 1, 306, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('123456789000', 'Yikimaro',NULL, 'Fuyimoto',NULL, DATE'2001-12-19', 'De la casa Presidencial 300mts al Norte y 125mts al Oeste' , 'kuyifu01@gmail.com' , 2, 216, USER, SYSDATE, 1);
 
-INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date)
-VALUES ('113236231', 'Laura', 'Lucrecia', 'Pedrero','Pedrasco', DATE'1996-07-07', 'Del chino de la última parada de San Rafael, 200,mts al Norte, casa con portón blanco' , 'llpiedra@gmail.com' , 1, 314, USER, SYSDATE);
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('454236231', 'Avelio', 'Josúe', 'Ferrano','Piso', DATE'1995-10-25', 'Del palo de mangos de Doña María, 200mts al Norte' , 'avelio100@gmail.com' , 1, 248, USER, SYSDATE, 3);
 
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('354211131', 'Mireya', 'Casal', 'Avenida','Cruz', DATE'1985-02-15', 'Del Masxmenos 500mts al sur, casa color gris' , 'mire985@gmail.com' , 1, 245, USER, SYSDATE, 3);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('651238238', 'Balbina', 'Daniela', 'Duarte','Durán', DATE'1986-11-30', 'Los departamentos del Sol Naciente, apartamento#45' , 'banbin11@gmail.com' , 1, 250, USER, SYSDATE, 2);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('521238238', 'Berta', 'María', 'Duarte','Durán', DATE'1986-11-30', 'Los departamentos del Sol Naciente, apartamento#35' , 'banbin11.2@gmail.com' , 1, 250, USER, SYSDATE, 2);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('761235538', 'Francisco', 'Antonio', 'Borja','Sola', DATE'2003-05-13', 'Los departamentos del Sol Naciente, apartamento#26' , 'franquisto05@gmail.com' , 1, 250, USER, SYSDATE, 1);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('357134138', 'Martín', NULL , 'Murcia','Mora', DATE'2005-05-10', 'Urbanización del El cafetal, zona Oeste, casa I11' , 'murciam05@gmail.com' , 1, 250, USER, SYSDATE, 1);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('589641020', 'Abraham', 'Antonio', 'Hermida','Jackson', DATE'1999-01-20', 'Urbanización del El cafetal, zona Noreste, casa J02' , 'abra999@gmail.com' , 1, 250, USER, SYSDATE, 1);
+
+INSERT INTO person(id_person, first_name , middle_name , first_surname, second_surname, date_birth , direction, email ,id_type, id_district, creation_user, creation_date, id_gender)
+VALUES ('152641020', 'Gloria', 'Marta', 'Pujol','Solano', DATE'1954-04-26', 'Urbanización del El cafetal, zona Noreste, casa J03' , 'pujol954@gmail.com' , 1, 250, USER, SYSDATE, 2);
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--User
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Benito64', 'Benito64','500235779', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Ricudo67', 'Ricudo67','500235009', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Blackch66', 'Blackch66','k12345678', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Rebbox07', 'Rebbox0701','117310571', 1, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Rositam198', 'Rositam198','117378971', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Uber64', 'Uber64','113730331', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Kamikase20', 'Kamikase20','718880331', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Cuchicu', 'Cuchicu','313731105', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Skai89', 'Skai56','113734571', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Harley96', 'Harley96','113236231', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('ChaoChao56', 'ChaoChao56','110102256911140303', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Yuuki', 'Yuuki','123456789000', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Avepiru', 'Avepiru','454236231', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Unica85', 'Unica85','354211131', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Kenzo86', 'Kenzo86','651238238', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Tiya986', 'Tiya986','521238238', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Ariff03', 'Ariff03','761235538', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('XOA05', 'XOA05','357134138', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Muse99', 'Muse99','589641020', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('Omega54', 'Omega54','152641020', 2, NULL , USER, SYSDATE);
+
+INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
+VALUES ('elpepe61', 'elpepe61','313731105', 2, NULL , USER, SYSDATE);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--PersonXNationality
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('500235779', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('500235009', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('k12345678', 3, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('117310571', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('718880331', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('113730331', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('117378971',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('313731105',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('113734571',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('113236231', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('110102256911140303', 6, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('123456789000', 5, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('454236231', 1, USER,SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('354211131', 1, USER,SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('651238238', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('521238238',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('7612355381', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('357134138', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('589641020', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('152641020', 1, USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--ID_TYPE_User
+INSERT INTO type_user(id_type_user, name , creation_user, creation_date)
+VALUES (S_type_user.nextval, 'Administrador', USER, SYSDATE);
+
+INSERT INTO type_user(id_type_user, name , creation_user, creation_date)
+VALUES (S_type_user.nextval, 'Usuario',  USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --ID_TYPE
 INSERT INTO id_type(id_type, name , creation_user, creation_date)
 VALUES (S_ID_TYPE.nextval, 'Cédula de Identidad',  USER, SYSDATE);
@@ -51,18 +208,95 @@ VALUES (S_ID_TYPE.nextval, 'Cédula de Residencia',  USER, SYSDATE);
 INSERT INTO id_type(id_type, name , creation_user, creation_date)
 VALUES (S_ID_TYPE.nextval, 'Otro',  USER, SYSDATE);
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Nationality
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Costarricense', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Costarricense', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Canadiense', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Canadiense', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Mexicano', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Mexicano', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Venezolano', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Venezolano', USER, SYSDATE);
+
+INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
+VALUES (S_nationality.nextval, 'Japones', USER, SYSDATE);
+
+INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
+VALUES (S_nationality.nextval, 'Chino', USER, SYSDATE);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Gender
+INSERT INTO gender(id_gender, name ,creation_user, creation_date)
+VALUES (S_gender.nextval, 'Hombre', USER, SYSDATE);
+
+INSERT INTO gender(id_gender, name ,creation_user, creation_date)
+VALUES (S_gender.nextval, 'Mujer', USER, SYSDATE);
+
+INSERT INTO gender(id_gender, name ,creation_user, creation_date)
+VALUES (S_gender.nextval, 'Otros', USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Payment_method
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Tarjeta de Crédito', USER, SYSDATE);
+
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Tarjeta de Débito', USER, SYSDATE);
+
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Efectivo', USER, SYSDATE);
+
+INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
+VALUES (s_payment_method.nextval, 'Cheque', USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Calification
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '1', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '2', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '3', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '4', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '5', USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Category
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de bolsillo', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj digital', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj electrónico', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de arena', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj despertador', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de Pared', USER, SYSDATE);
+
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de Pulsera', USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Category
+INSERT INTO category(id_category, name ,creation_user, creation_date)
+VALUES (s_category.nextval, 'Reloj de bolsillo', USER, SYSDATE);
 
 
 -------------------------------------------------------------------------
@@ -76,3 +310,5 @@ VALUES ('Top 5', '5');
 
 INSERT INTO parameters_t(name, values_p)
 VALUES ('Top 10', '10');
+
+

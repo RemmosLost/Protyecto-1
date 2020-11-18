@@ -15,6 +15,7 @@ CREATE TABLE person(
     id_type             NUMBER(4) CONSTRAINT person_type_nn NOT NULL,
     id_district         NUMBER(5) CONSTRAINT person_iddistrict_nn NOT NULL,
     id_photo            NUMBER(5) ,
+    id_gender           NUMBER(5) CONSTRAINT person_gender_nn NOT NULL,
     --AUDIT FIELDS
     creation_date       DATE CONSTRAINT person_creationdate_nn NOT NULL,
     creation_user       VARCHAR2(25) CONSTRAINT person_creationuser_nn NOT NULL,
@@ -29,6 +30,17 @@ CREATE TABLE photo(
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT photo_creationdate_nn NOT NULL,
     creation_user           VARCHAR2(25) CONSTRAINT photo_creationuser_nn NOT NULL,
+    last_update_date        DATE,
+    last_update_user        VARCHAR2(25)
+);
+
+CREATE TABLE gender(
+    id_gender                NUMBER(10),
+    name                     VARCHAR2(25)CONSTRAINT gender_name_nn NOT NULL,
+    --FK
+    --AUDIT FIELDS
+    creation_date           DATE CONSTRAINT gender_creationdate_nn NOT NULL,
+    creation_user           VARCHAR2(25) CONSTRAINT gender_creationuser_nn NOT NULL,
     last_update_date        DATE,
     last_update_user        VARCHAR2(25)
 );
@@ -193,9 +205,9 @@ CREATE TABLE phone_number(
 CREATE TABLE review(
     id_review    	    NUMBER(10),
     buyer_calification      NUMBER(1) CONSTRAINT review_buyercali_nn NOT NULL,
-    buyer_comment           VARCHAR2(25) CONSTRAINT review_buyercomm_nn NOT NULL,
+    buyer_comment           VARCHAR2(25),
     seller_calification     NUMBER(1) CONSTRAINT review_sellercali_nn NOT NULL,
-    seller_comment          VARCHAR2(25) CONSTRAINT review_sellercomm_nn NOT NULL,
+    seller_comment          VARCHAR2(25),
     product_calification    NUMBER(1) CONSTRAINT review_prodcali_nn NOT NULL,  
     --FK
     id_purchase             NUMBER(10) CONSTRAINT review_idpurcha_nn NOT NULL,
@@ -221,7 +233,7 @@ CREATE TABLE id_type(
 CREATE TABLE wish_list(
     id_wish_list    	    NUMBER(10),
     wish_list_date          DATE CONSTRAINT wish_date_nn NOT NULL,
-    note                    VARCHAR2(25) CONSTRAINT wish_note_nn NOT NULL,
+    note                    VARCHAR2(25),
     --FK
     username                VARCHAR2(25) CONSTRAINT wish_username_nn NOT NULL,
     --AUDIT FIELDS

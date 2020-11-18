@@ -2,6 +2,7 @@ ALTER TABLE person
     ADD (CONSTRAINT fk_person_type FOREIGN KEY (id_type) REFERENCES id_type(id_type),
         CONSTRAINT fk_person_district FOREIGN KEY (id_district) REFERENCES district(id_district),
         CONSTRAINT fk_person_photo FOREIGN KEY (id_photo) REFERENCES photo(id_photo)
+	CONSTRAINT fk_person_gender FOREIGN KEY (id_gender) REFERENCES gender(id_gender)
         );
 
 ALTER TABLE user_t
