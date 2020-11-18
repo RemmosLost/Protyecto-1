@@ -294,9 +294,16 @@ INSERT INTO category(id_category, name ,creation_user, creation_date)
 VALUES (s_category.nextval, 'Reloj de Pulsera', USER, SYSDATE);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---Category
-INSERT INTO category(id_category, name ,creation_user, creation_date)
-VALUES (s_category.nextval, 'Reloj de bolsillo', USER, SYSDATE);
+--Type_shipping
+INSERT INTO type_shipping(id_shipping, name, description ,creation_user, creation_date)
+VALUES (s_type_shipping.nextval, 'Marítimo', NULL, USER, SYSDATE);
+
+INSERT INTO type_shipping(id_shipping, name, description ,creation_user, creation_date)
+VALUES (s_type_shipping.nextval, 'Aéreo', NULL,USER, SYSDATE);
+
+INSERT INTO type_shipping(id_shipping, name, description ,creation_user, creation_date)
+VALUES (s_type_shipping.nextval, 'Terrestre', NULL,USER, SYSDATE);
+
 
 
 -------------------------------------------------------------------------

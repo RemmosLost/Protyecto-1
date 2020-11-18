@@ -324,7 +324,7 @@ CREATE TABLE condition  (
 CREATE TABLE type_shipping  (
     id_shipping    	    NUMBER(25),
     name                    VARCHAR2(30) CONSTRAINT shipp_name_nn NOT NULL,
-    description  	    VARCHAR2(30) CONSTRAINT shipp_descip_nn NOT NULL,
+    description  	    VARCHAR2(30),
     --FK
     --AUDIT FIELDS
     creation_date           DATE CONSTRAINT shipp_creationdate_nn NOT NULL,
