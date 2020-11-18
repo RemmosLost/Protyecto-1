@@ -233,7 +233,7 @@ CREATE TABLE id_type(
 CREATE TABLE wish_list(
     id_wish_list    	    NUMBER(10),
     wish_list_date          DATE CONSTRAINT wish_date_nn NOT NULL,
-    note                    VARCHAR2(25) CONSTRAINT wish_note_nn NOT NULL,
+    note                    VARCHAR2(25),
     --FK
     username                VARCHAR2(25) CONSTRAINT wish_username_nn NOT NULL,
     --AUDIT FIELDS

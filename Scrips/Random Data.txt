@@ -212,32 +212,32 @@ VALUES (S_ID_TYPE.nextval, 'Otro',  USER, SYSDATE);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Nationality
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Costarricense', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Costarricense', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Canadiense', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Canadiense', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Mexicano', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Mexicano', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Venezolano', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Venezolano', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Japones', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Japones', USER, SYSDATE);
 
 INSERT INTO nationality(id_nationality, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Chino', USER, SYSDATE);
+VALUES (S_nationality.nextval, 'Chino', USER, SYSDATE);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Gender
 INSERT INTO gender(id_gender, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Hombre', USER, SYSDATE);
+VALUES (S_gender.nextval, 'Hombre', USER, SYSDATE);
 
 INSERT INTO gender(id_gender, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Mujer', USER, SYSDATE);
+VALUES (S_gender.nextval, 'Mujer', USER, SYSDATE);
 
 INSERT INTO gender(id_gender, name ,creation_user, creation_date)
-VALUES (S_ID_TYPE.nextval, 'Otros', USER, SYSDATE);
+VALUES (S_gender.nextval, 'Otros', USER, SYSDATE);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Payment_method
@@ -252,6 +252,25 @@ VALUES (s_payment_method.nextval, 'Efectivo', USER, SYSDATE);
 
 INSERT INTO payment_method(id_payment_method, description ,creation_user, creation_date)
 VALUES (s_payment_method.nextval, 'Cheque', USER, SYSDATE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Calification
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '1', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '2', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '3', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '4', USER, SYSDATE);
+
+INSERT INTO calification(id_calification, type ,creation_user, creation_date)
+VALUES (s_calification.nextval, '5', USER, SYSDATE);
+
+
 
 -------------------------------------------------------------------------
 --PAR
