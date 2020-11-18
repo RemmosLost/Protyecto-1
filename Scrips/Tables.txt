@@ -205,9 +205,9 @@ CREATE TABLE phone_number(
 CREATE TABLE review(
     id_review    	    NUMBER(10),
     buyer_calification      NUMBER(1) CONSTRAINT review_buyercali_nn NOT NULL,
-    buyer_comment           VARCHAR2(25) CONSTRAINT review_buyercomm_nn NOT NULL,
+    buyer_comment           VARCHAR2(25),
     seller_calification     NUMBER(1) CONSTRAINT review_sellercali_nn NOT NULL,
-    seller_comment          VARCHAR2(25) CONSTRAINT review_sellercomm_nn NOT NULL,
+    seller_comment          VARCHAR2(25),
     product_calification    NUMBER(1) CONSTRAINT review_prodcali_nn NOT NULL,  
     --FK
     id_purchase             NUMBER(10) CONSTRAINT review_idpurcha_nn NOT NULL,
