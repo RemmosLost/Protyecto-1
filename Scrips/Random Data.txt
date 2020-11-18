@@ -117,14 +117,74 @@ INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purch
 VALUES ('XOA05', 'XOA05','357134138', 2, NULL , USER, SYSDATE);
 
 INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
-VALUES ('Muse99', 'Kenzo86','589641020', 2, NULL , USER, SYSDATE);
+VALUES ('Muse99', 'Muse99','589641020', 2, NULL , USER, SYSDATE);
 
 INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
-VALUES ('Omega54', 'Kenzo86','152641020', 2, NULL , USER, SYSDATE);
+VALUES ('Omega54', 'Omega54','152641020', 2, NULL , USER, SYSDATE);
 
 INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
 VALUES ('elpepe61', 'elpepe61','313731105', 2, NULL , USER, SYSDATE);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--PersonXNationality
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('500235779', 1, USER, SYSDATE);
 
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('500235009', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('k12345678', 3, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('117310571', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('718880331', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('113730331', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('117378971',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('313731105',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('113734571',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('113236231', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('110102256911140303', 6, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('123456789000', 5, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('454236231', 1, USER,SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('354211131', 1, USER,SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('651238238', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('521238238',1 , USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('7612355381', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('357134138', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('589641020', 1, USER, SYSDATE);
+
+INSERT INTO personxnationality(id_person, id_nationality, creation_user, creation_date)
+VALUES ('152641020', 1, USER, SYSDATE);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --ID_TYPE_User
