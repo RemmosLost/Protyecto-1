@@ -364,6 +364,22 @@ VALUES (s_phone_number.nextval, 83117510,'117310571',USER, SYSDATE);
 
 INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
 VALUES (s_phone_number.nextval, 71011725,'761235538',USER, SYSDATE);
+-------------------------------------------------------------------------
+--Condition
+INSERT INTO condition(id_condition, name ,creation_user, creation_date)
+VALUES (s_condition.nextval,'Nuevo',USER, SYSDATE);
+
+INSERT INTO condition(id_condition, name ,creation_user, creation_date)
+VALUES (s_condition.nextval,'Usado',USER, SYSDATE);
+
+INSERT INTO condition(id_condition, name ,creation_user, creation_date)
+VALUES (s_condition.nextval,'Funcional',USER, SYSDATE);
+
+INSERT INTO condition(id_condition, name ,creation_user, creation_date)
+VALUES (s_condition.nextval,'No funcional',USER, SYSDATE);
+
+INSERT INTO condition(id_condition, name ,creation_user, creation_date)
+VALUES (s_condition.nextval,'Coleccionable',USER, SYSDATE);
 
 -------------------------------------------------------------------------
 --PAR
