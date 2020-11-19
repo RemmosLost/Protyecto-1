@@ -47,7 +47,7 @@ END;
 CREATE OR REPLACE FUNCTION top_best_califications(pvalues_p Number) RETURN VARCHAR2 IS
 vcName VARCHAR2(30);
 BEGIN
-	SELECT u.username, avg(r.seller_calification) 
+    SELECT u.username, avg(r.seller_calification) 
     INTO vcName
     FROM user_t u 
     INNER JOIN userxcalification uxc
@@ -57,7 +57,7 @@ BEGIN
     INNER JOIN review r
     ON c.id_calification = r.id_calification
     GROUP by u.username
-	ORDER BY avg(r.buyer_calification) DESC;
+	ORDER BY avg(r.buyer_calification) ASC;
     RETURN vcname;
 END;
 ----------------------------------------------------------------------
@@ -76,11 +76,31 @@ BEGIN
     INNER JOIN review r
     ON c.id_calification = r.id_calification
     GROUP by u.username
-	ORDER BY avg(r.buyer_calification) Asc;
+    ORDER BY avg(r.buyer_calification) Asc;
     RETURN vcname;
 END;
 
 ----------------------------------------------------------------------
---b.Top_buyers
+--d.Top_less_buyers
 ----------------------------------------------------------------------  
+CREATE OR REPLACE FUNCTION top_less_best_califications(pvalues_p Number) RETURN VARCHAR2 IS
+vcName VARCHAR2(30);
+BEGIN
+    SELECT u.username, avg(r.seller_calification) 
+    INTO vcName
+    FROM user_t u 
+    INNER JOIN userxcalification uxc
+    ON u.username = uxc.username
+    INNER JOIN calification c
+    ON uxc.id_calification = c.id_calification
+    INNER JOIN review r
+    ON c.id_calification = r.id_calification
+    GROUP by u.username
+    ORDER BY avg(r.buyer_calification) Asc;
+    RETURN vcname;
+END;
 
+
+----------------------------------------------------------------------
+--d.Top_less_buyers
+----------------------------------------------------------------------  
