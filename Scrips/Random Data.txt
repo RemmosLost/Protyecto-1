@@ -539,95 +539,93 @@ VALUES (s_brand.nextval, 'Bremont', USER, SYSDATE);
 
 ------------------------------------------------------------------------
 
--- Modelo 0
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Sol', 0, USER, SYSDATE);
+-- Modelo 1
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Sol', 1, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Luna', 0, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Luna', 1, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Agua', 0, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Agua', 1, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Fuego', 0, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Fuego', 1, USER, SYSDATE);
 
 -------------------------------------------------------------------------
 
 -- Modelo 1
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Carbón', 1, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Carbón', 2, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Petroleo', 1, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Petroleo', 2, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Plasma', 1, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Plasma', 2, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Aceite', 1, USER, SYSDATE);
-
--------------------------------------------------------------------------
-
--- Modelo 2
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Bart', 2, USER, SYSDATE);
-
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Homero', 2, USER, SYSDATE);
-
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Lisa', 2, USER, SYSDATE);
-
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Marge', 2, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Aceite', 2, USER, SYSDATE);
 
 -------------------------------------------------------------------------
 
 -- Modelo 3
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Jak', 3, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Bart', 3, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Daxter', 3, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Homero', 3, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Rachet', 3, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Lisa', 3, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Clanck', 3, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Marge', 3, USER, SYSDATE);
 
 -------------------------------------------------------------------------
 
 -- Modelo 4
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Donatelo', 4, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Jak', 4, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Rafael', 4, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Daxter', 4, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Leonardo', 4, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Rachet', 3, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Michelangelo', 4, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Clanck', 4, USER, SYSDATE);
 
 -------------------------------------------------------------------------
 
 -- Modelo 5
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Reed', 5, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Donatelo', 5, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Susan', 5, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Rafael', 5, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Johnny', 5, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Leonardo', 5, USER, SYSDATE);
 
-INSERT INTO model(id_model, name, id_style, creation_user, creation_date)
-VALUES (s_model.nextval, 'Ben', 5, USER, SYSDATE);
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Michelangelo', 5, USER, SYSDATE);
 
 -------------------------------------------------------------------------
+
+-- Modelo 6
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Reed', 6, USER, SYSDATE);
+
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Susan', 6, USER, SYSDATE);
+
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Johnny', 6, USER, SYSDATE);
+
+INSERT INTO model(id_model, name, id_brand, creation_user, creation_date)
+VALUES (s_model.nextval, 'Ben', 6, USER, SYSDATE);
 
 
 -------------------------------------------------------------------------
