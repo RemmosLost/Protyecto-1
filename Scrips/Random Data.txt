@@ -84,9 +84,6 @@ INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purch
 VALUES ('Kamikase20', 'Kamikase20','718880331', 2, NULL , USER, SYSDATE);
 
 INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
-VALUES ('Cuchicu', 'Cuchicu','313731105', 2, NULL , USER, SYSDATE);
-
-INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
 VALUES ('Skai89', 'Skai56','113734571', 2, NULL , USER, SYSDATE);
 
 INSERT INTO user_t(username, user_password , id_person , id_type_user , id_purchase , creation_user, creation_date)
@@ -303,8 +300,70 @@ VALUES (s_type_shipping.nextval, 'Aéreo', NULL,USER, SYSDATE);
 
 INSERT INTO type_shipping(id_shipping, name, description ,creation_user, creation_date)
 VALUES (s_type_shipping.nextval, 'Terrestre', NULL,USER, SYSDATE);
+-------------------------------------------------------------------------
+--Phone_number
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 69823723,'500235779', USER, SYSDATE);
 
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 65673723,'500235009', USER, SYSDATE);
 
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87330723,'k12345678', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 80230723,'117378971', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87352323,'113730331', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 65230723,'718880331', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87330363,'313731105', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87330723,'113734571', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 70312725,'113236231',USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 83612725,'110102256911140303',USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 66659723,'123456789000', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 60000723,'454236231', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87333323,'354211131', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 80503723,'651238238', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87352555,'761231138', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 65232123,'357134138', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87986363,'589641020', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 87001723,'152641020', USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 70020835,'761235538',USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 83117510,'117310571',USER, SYSDATE);
+
+INSERT INTO phone_number(id_phone_number, phone_number, id_person ,creation_user, creation_date)
+VALUES (s_phone_number.nextval, 71011725,'761235538',USER, SYSDATE);
 
 -------------------------------------------------------------------------
 --PAR
