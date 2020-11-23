@@ -339,14 +339,14 @@ CREATE OR REPLACE PROCEDURE updatepass(pusername VARCHAR2, ppass VARCHAR2) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
-CREATE OR REPLACE FUNCTION getPersona(pid_person VARCHAR2) RETURN NUMBER IS
-    vid_person NUMBER(20);
+CREATE OR REPLACE FUNCTION getUser(pusername VARCHAR2) RETURN NUMBER IS
+    vusername VARCHAR(20);
 	BEGIN
-            SELECT id_person, first_name , middle_name , first_surname, second_surname 
-            INTO vid_person
+            SELECT username, user_password  
+            INTO vusername
             FROM person
             WHERE id_person = pid_person;
-            RETURN (vid_person);
+            RETURN (vusername);
     EXCEPTION
         WHEN VALUE_ERROR THEN
             DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');

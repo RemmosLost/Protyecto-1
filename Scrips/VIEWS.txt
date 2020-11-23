@@ -1,0 +1,40 @@
+--VIEWS
+
+CREATE OR REPLACE VIEW numberPeopleByGender AS
+    SELECT g.gender_name AS Género, COUNT(*) AS Valor
+    FROM person p, gender g
+    WHERE p.id_gender = g.id_gender
+    GROUP BY g.gender_description;
+
+CREATE OR REPLACE VIEW numberPeopleByAge AS
+    SELECT '0-18' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 0 and 18
+    UNION
+    SELECT '19-30' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 19 and 30
+    UNION
+    SELECT '31-45' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 31 and 45
+    UNION
+    SELECT '46-55' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 46 and 55
+    UNION
+    SELECT '56-65' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 56 and 65
+    UNION
+    SELECT '66-75' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 66 and 75
+    UNION
+    SELECT '76-85' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/12) between 76 and 85
+    UNION
+    SELECT '> 85' Edad, count(1) AS Valor
+    FROM person
+    WHERE trunc(months_between(sysdate, person.date_birth)/125) > 85;
