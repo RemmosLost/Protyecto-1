@@ -252,7 +252,7 @@ CREATE OR REPLACE FUNCTION getPersona(pid_person VARCHAR2) RETURN NUMBER IS
 CREATE OR REPLACE PROCEDURE insertUser (pusername VARCHAR2, puser_password VARCHAR2, pid_person VARCHAR2, pid_type_user NUMBER, pid_purchase NUMBER) IS
     p_notFound EXCEPTION;
     BEGIN
-        INSERT INTO user_t(pusername, puser_password, pid_person, pid_type_user, pid_purchase)
+        INSERT INTO user_t(username, user_password, id_person, id_type_user, id_purchase)
         VALUES (pusername, puser_password, pid_person, pid_type_user, pid_purchase);
         COMMIT;
         EXCEPTION
@@ -339,6 +339,130 @@ CREATE OR REPLACE PROCEDURE updatepass(pusername VARCHAR2, ppass VARCHAR2) IS
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
 
+CREATE OR REPLACE FUNCTION getPersona(pid_person VARCHAR2) RETURN NUMBER IS
+    vid_person NUMBER(20);
+	BEGIN
+            SELECT id_person, first_name , middle_name , first_surname, second_surname 
+            INTO vid_person
+            FROM person
+            WHERE id_person = pid_person;
+            RETURN (vid_person);
+    EXCEPTION
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+
 -------------------------------------------
---User
+--Country
 -------------------------------------------
+CREATE OR REPLACE PROCEDURE insertcountry (pname VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        INSERT INTO country(id_country, name)
+        VALUES (s_country, pname);
+        COMMIT;
+        EXCEPTION
+            WHEN VALUE_ERROR THEN
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE ('Valor no soportado.Ingrese un valor correcto.');
+            WHEN OTHERS THEN
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END; 
+
+CREATE OR REPLACE PROCEDURE deletecountry(pid_country NUMBER) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        DELETE country
+        WHERE id_country = id_country;
+        COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un nuevo valor.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+
+CREATE OR REPLACE PROCEDURE updatecountryname(pid_country NUMBER, pname VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+	UPDATE country
+    	SET id_country  = pid_country 
+    	Where name = pname;
+    	COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+-------------------------------------------
+--Purchase
+-------------------------------------------
+CREATE OR REPLACE PROCEDURE insertpurchase (pid_purchase NUMBER, ppurcahse_date DATE, pid_payment_method NUMBER) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        INSERT INTO purchase(id_purchase, purcahse_date, id_payment_method)
+        VALUES (s_purchase, purcahse_date, id_payment_method);
+        COMMIT;
+        EXCEPTION
+            WHEN VALUE_ERROR THEN
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE ('Valor no soportado.Ingrese un valor correcto.');
+            WHEN OTHERS THEN
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END; 
+
+CREATE OR REPLACE PROCEDURE deletepurchase(pid_purchase VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        DELETE purchase
+        WHERE id_purchase = pid_purchase;
+        COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un nuevo valor.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+
+CREATE OR REPLACE PROCEDURE updatepurchase(pid_purchase NUMBER, pname VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+	UPDATE country
+    	SET id_country  = pid_country 
+    	Where name = pname;
+    	COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
