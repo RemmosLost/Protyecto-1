@@ -525,16 +525,16 @@ VALUES (s_style.nextval, 'Steampunk', USER, SYSDATE);
 INSERT INTO brand(id_brand, name, creation_user, creation_date)
 VALUES (s_brand.nextval, 'Rolex', USER, SYSDATE);
 
-INSERT INTO style(id_style, name, creation_user, creation_date)
+INSERT INTO brand(id_brand, name, creation_user, creation_date)
 VALUES (s_brand.nextval, 'Carter', USER, SYSDATE);
 
-INSERT INTO style(id_style, name, creation_user, creation_date)
+INSERT INTO brand(id_brand, name, creation_user, creation_date)
 VALUES (s_brand.nextval, 'Omega', USER, SYSDATE);
 
-INSERT INTO style(id_style, name, creation_user, creation_date)
+INSERT INTO brand(id_brand, name, creation_user, creation_date)
 VALUES (s_brand.nextval, 'Seiko', USER, SYSDATE);
 
-INSERT INTO style(id_style, name, creation_user, creation_date)
+INSERT INTO brand(id_brand, name, creation_user, creation_date)
 VALUES (s_brand.nextval, 'Bremont', USER, SYSDATE);
 
 ------------------------------------------------------------------------

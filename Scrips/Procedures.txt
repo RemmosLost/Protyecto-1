@@ -242,6 +242,103 @@ CREATE OR REPLACE FUNCTION getPersona(pid_person VARCHAR2) RETURN NUMBER IS
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
     END;
+
+
+
+-------------------------------------------
+--User
+-------------------------------------------
+
+CREATE OR REPLACE PROCEDURE insertUser (pusername VARCHAR2, puser_password VARCHAR2, pid_person VARCHAR2, pid_type_user NUMBER, pid_purchase NUMBER) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        INSERT INTO user_t(pusername, puser_password, pid_person, pid_type_user, pid_purchase)
+        VALUES (pusername, puser_password, pid_person, pid_type_user, pid_purchase);
+        COMMIT;
+        EXCEPTION
+            WHEN VALUE_ERROR THEN
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE ('Valor no soportado.Ingrese un valor correcto.');
+            WHEN OTHERS THEN
+                ROLLBACK;
+                DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END; 
+
+CREATE OR REPLACE PROCEDURE deleteUser(pusername VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+        DELETE user_t
+        WHERE username = pusername;
+        COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un nuevo valor.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+CREATE OR REPLACE PROCEDURE updateUsername(pusername VARCHAR2, pusername2 VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+	UPDATE user_t
+    	SET username = pusername
+    	Where username = pusername2;
+    	COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+CREATE OR REPLACE PROCEDURE updateUsername(pusername VARCHAR2, pusername2 VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+	UPDATE user_t
+    	SET username = pusername
+    	Where username = pusername2;
+    	COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
+CREATE OR REPLACE PROCEDURE updatepass(pusername VARCHAR2, ppass VARCHAR2) IS
+    p_notFound EXCEPTION;
+    BEGIN
+	UPDATE user_t
+    	SET username = pusername
+    	Where user_password = ppass;
+    	COMMIT;
+        IF SQL%NOTFOUND THEN
+            RAISE p_notFound;
+        END IF;
+    EXCEPTION
+        WHEN p_notFound THEN
+            DBMS_OUTPUT.PUT_LINE ('No se pudo encontrar a la persona con la identificacion ' || pid_person);
+        WHEN VALUE_ERROR THEN
+            DBMS_OUTPUT.PUT_LINE ('Valor no soportado. Ingrese un valor correcto.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE ('Ocurrió un error inesperado.');
+    END;
+
 -------------------------------------------
 --User
 -------------------------------------------
